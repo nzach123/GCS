@@ -309,22 +309,48 @@ footer {
 /* Media Queries */
 @media (max-width: 768px) {
 
-    /* Hero */
+    /* Hero: horizontal gradient (logo area on top, text on bottom) */
     .hero {
-        padding: 4rem 1rem;
-        /* More padding for mobile */
-        /* Change gradient to vertical split or just linear */
-        background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 50%, var(--color-black) 50%, var(--color-black) 100%);
+        padding: 2rem 1rem;
+        /* Change gradient to vertical split: blue top (40%), black bottom (60%) */
+        background: linear-gradient(180deg,
+                var(--color-primary) 0%,
+                var(--color-primary) 40%,
+                var(--color-black) 40%,
+                var(--color-black) 100%);
     }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 1.5rem;
+    }
+
+    /* Move logo to top */
+    .hero-visual {
+        order: -1;
+        /* Place before text content */
+        left: 0;
+        /* Center it */
+        margin-bottom: 0;
+    }
+
+    .hero-logo {
+        max-width: 250px;
+        /* Smaller on mobile */
     }
 
     .hero-content {
         max-width: 100%;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero-features {
+        text-align: center;
     }
 
     .hero-actions {
@@ -332,13 +358,7 @@ footer {
         flex-direction: column;
     }
 
-    .hero-logo {
-        max-width: 300px;
-    }
-
-    /* Footer */
-    .footer-content {
-        flex-direction: column;
+    .meeting-info {
         text-align: center;
     }
 }
