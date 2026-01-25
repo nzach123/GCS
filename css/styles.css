@@ -265,7 +265,7 @@ footer {
 .meeting-detail {
     font-size: 1.5rem;
     font-family: var(--font-heading);
-    color: var(--color-primary);
+    color: var(--color-accent);
 }
 
 .copyright {
