@@ -3,6 +3,7 @@
     --color-primary: #0077C8; /* Blue from reference */
     --color-black: #111111;
     --color-white: #FFFFFF;
+    --color-gray-light: #F4F4F4;
     --color-accent: #FFC700; /* Yellow from reference */
 
     /* Typography */
@@ -50,6 +51,13 @@ a {
 :focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
+}
+
+/* Layout Utilities */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Hero Section */
@@ -187,4 +195,46 @@ a {
     max-width: 450px;
     height: auto;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); /* Add depth */
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 0;
+    background-color: var(--color-gray-light);
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+}
+
+.feature-card p {
+    font-size: 1.1rem;
+    color: #444;
 }
