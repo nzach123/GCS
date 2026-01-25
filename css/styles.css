@@ -228,6 +228,11 @@ a {
     /* Add depth */
 }
 
+/* Hero Focus Override */
+.hero :focus-visible {
+    outline-color: var(--color-accent);
+}
+
 /* Features Section */
 .features {
     padding: 5rem 0;
