@@ -181,3 +181,10 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+.hero-logo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); /* Add depth */
+}
