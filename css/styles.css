@@ -1,1 +1,44 @@
-﻿/* styles.css */
+:root {
+    /* Colors */
+    --color-primary: #0077C8; /* Blue from reference */
+    --color-black: #111111;
+    --color-white: #FFFFFF;
+    --color-accent: #FFC700; /* Yellow for specific accents if needed */
+
+    /* Typography */
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+}
+
+/* Accessibility & Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-black);
+    background-color: var(--color-white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400; /* Bebas Neue is bold by default */
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
