@@ -274,3 +274,38 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 2rem;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Hero */
+    .hero {
+        padding: 4rem 1rem; /* More padding for mobile */
+        /* Change gradient to vertical split or just linear */
+        background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary) 50%, var(--color-black) 50%, var(--color-black) 100%);
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .hero-logo {
+        max-width: 300px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
