@@ -90,6 +90,13 @@ a {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     color: var(--color-white);
+    display: flex;
+    align-items: center;
+}
+
+.site-header .header-logo {
+    height: 40px;
+    width: auto;
 }
 
 .site-header nav {
