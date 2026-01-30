@@ -1,0 +1,270 @@
+:root {
+  --showcase-bg: #1b2838;
+  --showcase-text: #c7d5e0;
+  --showcase-accent: #66c0f4;
+}
+
+body {
+  background-color: var(--showcase-bg);
+  color: var(--showcase-text);
+}
+
+/* ==========================================================================
+   Hero Switcher
+   ========================================================================== */
+
+.showcase-hero {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Hidden Radios */
+.hero-radio {
+  display: none;
+}
+
+/* Container */
+.hero-content-wrapper {
+  display: flex;
+  height: 60vh;
+  min-height: 500px;
+  gap: 0;
+  background: #0f161f;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 70% Feature Image Area */
+.hero-visual-area {
+  flex: 7;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 6s ease;
+  transform: scale(1);
+}
+
+/* Show Image based on checked radio */
+#hero-1:checked ~ .hero-content-wrapper .hero-visual-area .slide-img-1,
+#hero-2:checked ~ .hero-content-wrapper .hero-visual-area .slide-img-2,
+#hero-3:checked ~ .hero-content-wrapper .hero-visual-area .slide-img-3 {
+  opacity: 1;
+  transform: scale(1.05); /* Slight zoom for "alive" feel */
+}
+
+
+/* 30% Info Area */
+.hero-info-area {
+  flex: 3;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to right, #121921, #16202b);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.hero-slide-info {
+  display: none; /* Hidden by default */
+  animation: fadeIn 0.4s ease;
+}
+
+/* Show Info based on checked radio */
+#hero-1:checked ~ .hero-content-wrapper .hero-info-area .slide-info-1,
+#hero-2:checked ~ .hero-content-wrapper .hero-info-area .slide-info-2,
+#hero-3:checked ~ .hero-content-wrapper .hero-info-area .slide-info-3 {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-game-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.hero-game-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #a3b3c5;
+}
+
+/* Navigation Controls (Prev/Next) */
+.hero-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.nav-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  user-select: none;
+  border-radius: 4px;
+}
+
+.nav-label:hover {
+  background-color: var(--showcase-accent);
+  color: var(--color-black);
+}
+
+/* ==========================================================================
+   Horizontal Shelves
+   ========================================================================== */
+
+.category-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
+  border-left: 5px solid var(--showcase-accent);
+}
+
+.shelf-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 2rem; /* Space for scrollbar */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--showcase-accent) transparent;
+}
+
+.shelf-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.shelf-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.shelf-container::-webkit-scrollbar-thumb {
+  background-color: var(--showcase-accent);
+  border-radius: 4px;
+}
+
+/* Card Design */
+.game-card {
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: start;
+  text-decoration: none; /* Remove link underline */
+  color: inherit;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.game-card:hover {
+  transform: translateY(-5px); /* Lift entire card slightly */
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.75rem;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Hover Effect: Zoom Scale */
+.game-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-info {
+  padding: 0 0.25rem;
+}
+
+.card-title {
+  font-family: var(--font-body); /* Using body font but bold for readability */
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  color: #a3b3c5;
+}
+
+/* ==========================================================================
+   Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-visual-area {
+    height: 300px; /* Fixed height for image area on mobile */
+    width: 100%;
+  }
+
+  .hero-info-area {
+    width: 100%;
+    padding: 1.5rem;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-game-title {
+    font-size: 2.5rem;
+  }
+  
+  .game-card {
+    width: 260px; /* Slightly smaller cards on mobile */
+  }
+  
+  .category-title {
+    font-size: 2rem;
+  }
+}
