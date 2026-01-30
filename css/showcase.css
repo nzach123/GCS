@@ -32,6 +32,11 @@ footer {
   z-index: 1;
 }
 
+/* Override footer to match other pages with solid black background */
+footer {
+  background-color: var(--color-black);
+}
+
 /* ==========================================================================
    Hero Switcher
    ========================================================================== */

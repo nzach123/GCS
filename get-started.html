@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Your First Game Starts Here - A comprehensive guide to starting game development with free tools, curated tutorials, and expert advice.">
+    <title>Start Creating - Game Creators Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="guide-page">
+    <header class="site-header">
+        <a href="index.html" class="logo-link"><img src="assets/gsc-logo-plain.png" alt="GCS Logo"
+                class="header-logo"></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="get-started.html">Get Started</a>
+            <a href="showcase.html">Showcase</a>
+            <a href="https://discord.gg/YpPJXkeW" class="btn-nav" target="_blank" rel="noopener noreferrer">Join
+                Discord</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Guide Hero -->
+        <section class="hero guide-hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Your First Game<br>Starts Here</h1>
+                    <p class="hero-subtitle">Stop Watching. Start Creating.</p>
+                    <p class="hero-description">
+                        You don't need a computer science degree, a $3,000 workstation, or years of preparation.
+                        What you need is right in front of you: curiosity, commitment, and the right tools.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#chapter-1" class="btn btn-primary">Choose Your Engine</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="img-placeholder hero-placeholder">
+                        <p>Hero Image: Developer at laptop with game on screen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="container">
+                <blockquote>
+                    "Every professional game developer started exactly where you are now. The only difference? They took
+                    the first step."
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Scope Warning Section -->
+        <section class="chapter scope-warning-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>⚠️ The Scope Trap</h2>
+                    <p>Your first game should take <strong>2 weeks maximum</strong> to complete. Not 2 months. Not "when
+                        it's ready."</p>
+                </header>
+
+                <div class="grid-2">
+                    <div class="scope-box scope-good">
+                        <h4>✅ Good First Projects</h4>
+                        <ul>
+                            <li><strong>Pong clone</strong> — 3 days</li>
+                            <li><strong>Flappy Bird clone</strong> — 1 week</li>
+                            <li><strong>Simple platformer with 3 levels</strong> — 2 weeks</li>
+                        </ul>
+                    </div>
+                    <div class="scope-box scope-bad">
+                        <h4>❌ Projects That Will Crush Your Soul</h4>
+                        <ul>
+                            <li><strong>"A small RPG like Undertale"</strong> — Undertale took 2.7 years</li>
+                            <li><strong>"A simple roguelike"</strong> — Simple roguelikes take 6+ months</li>
+                            <li><strong>"Multiplayer online game"</strong> — Don't. Just don't. Not first.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="scope-reminder"><em>Scale your ambition to your experience. Your 10th game can be ambitious.
+                        Your 1st game needs to ship.</em></p>
+            </div>
+        </section>
+
+        <!-- Chapter 1: Engines -->
+        <section id="chapter-1" class="chapter engines-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>Chapter One</h2>
+                    <h3>Choose Your Game Engine</h3>
+                    <p>Think of your game engine as your creative workshop. It's where imagination becomes interactive
+                        reality. The good news: you can't make a wrong choice here.</p>
+                </header>
+
+                <div class="grid-3">
+                    <!-- Unity -->
+                    <article class="card engine-card">
+                        <div class="card-image img-placeholder">Unity Logo/Screenshot</div>
+                        <div class="card-content">
+                            <h4>Unity — The Industry Standard</h4>
+                            <div class="tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">2D/3D</span>
+                                <span class="tag">VR/AR</span>
+                            </div>
+                            <p>Unity is the Swiss Army knife of game development. It powers 70% of mobile games and
+                                indie phenomena like <em>Among Us</em>, <em>Cuphead</em>, and <em>Hollow Knight</em>.
+                            </p>
+                            <ul class="specs">
+                                <li><strong>Language:</strong> C# (one of the best first programming languages)</li>
+                                <li><strong>Hardware:</strong> Runs smoothly on most standard laptops</li>
+                                <li><strong>Learning curve:</strong> Moderate—steep enough to teach real skills, gentle
+                                    enough for beginners</li>
+                            </ul>
+                            <a href="https://unity.com/download" target="_blank" rel="noopener noreferrer"
+                                class="btn-text">Download Unity Hub
+                                →</a>
+                        </div>
+                    </article>
+
+                    <!-- Unreal -->
+                    <article class="card engine-card">
+                        <div class="card-image img-placeholder">Unreal Logo/Screenshot</div>
+                        <div class="card-content">
+                            <h4>Unreal Engine 5 — Visual Powerhouse</h4>
+                            <div class="tags">
+                                <span class="tag">High-Fidelity 3D</span>
+                                <span class="tag">Cinematic</span>
+                            </div>
+                            <p>Unreal Engine 5 is what happens when cutting-edge technology meets artistic ambition.
+                                Used for <em>Fortnite</em> and <em>The Mandalorian</em>.</p>
+                            <ul class="specs">
+                                <li><strong>Language:</strong> Blueprints (visual scripting) / C++</li>
+                                <li><strong>Hardware:</strong> High-End (Dedicated GPU, 16GB+ RAM)</li>
+                                <li><strong>Learning curve:</strong> Steeper, but Blueprints make it accessible</li>
+                            </ul>
+                            <p class="engine-warning">⚠️ Do not attempt on basic laptops or integrated graphics.</p>
+                            <p class="pro-tip">💡 <strong>Pro Tip:</strong> Many shipped indie games are 100%
+                                Blueprints. <em>Astroneer</em>, <em>Cloudpunk</em>, and early <em>Fortnite</em> were
+                                heavily Blueprint-based.</p>
+                            <a href="https://www.unrealengine.com/en-US/download" target="_blank"
+                                rel="noopener noreferrer" class="btn-text">Download UE5 →</a>
+                        </div>
+                    </article>
+
+                    <!-- Godot -->
+                    <article class="card engine-card">
+                        <div class="card-image img-placeholder">Godot Logo/Screenshot</div>
+                        <div class="card-content">
+                            <h4>Godot — Open-Source Champion</h4>
+                            <div class="tags">
+                                <span class="tag">2D</span>
+                                <span class="tag">Lightweight</span>
+                                <span class="tag">Open Source</span>
+                            </div>
+                            <p>Weighing in at under 100MB with near-instant startup times, it runs beautifully on
+                                hardware that would make other engines wheeze.</p>
+                            <ul class="specs">
+                                <li><strong>Language:</strong> GDScript (beginner-friendly, Python-like syntax)</li>
+                                <li><strong>Hardware:</strong> Any (Runs on Chromebooks)</li>
+                                <li><strong>Learning curve:</strong> Gentlest—perfect for absolute beginners</li>
+                            </ul>
+                            <a href="https://godotengine.org/download" target="_blank" rel="noopener noreferrer"
+                                class="btn-text">Download Godot
+                                →</a>
+                            <a href="https://docs.godotengine.org/" target="_blank" rel="noopener noreferrer"
+                                class="btn-text">Official Docs →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Non-Programmer Note -->
+                <div class="non-programmer-note mt-large">
+                    <h4>📝 Note for Non-Programmers</h4>
+                    <p>You don't <em>have</em> to code to make games. Consider:</p>
+                    <div class="grid-4">
+                        <div class="alt-tool">
+                            <strong>RPG Maker</strong>
+                            <span>Complete RPGs with zero programming</span>
+                        </div>
+                        <div class="alt-tool">
+                            <strong>GB Studio</strong>
+                            <span>Game Boy-style games, visual scripting only</span>
+                        </div>
+                        <div class="alt-tool">
+                            <strong>Construct 3</strong>
+                            <span>2D games with event-based logic</span>
+                        </div>
+                        <div class="alt-tool">
+                            <strong>Unreal Blueprints</strong>
+                            <span>Full 3D games without writing code</span>
+                        </div>
+                    </div>
+                    <p><em>Visual scripting is real game development. Don't let gatekeepers tell you otherwise.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Tools -->
+        <section id="chapter-2" class="chapter tools-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>Chapter Two</h2>
+                    <h3>Build Your Virtual Studio</h3>
+                    <p>A game engine alone isn't enough. Professional developers surround themselves with complementary
+                        tools that handle everything from writing code to preventing catastrophic file loss.</p>
+                </header>
+
+                <div class="grid-2">
+                    <!-- Code Editors -->
+                    <article class="tool-group">
+                        <div class="tool-header">
+                            <h4>Code Editors (Your Digital Workspace)</h4>
+                            <p>Even if you're using visual scripting, you'll eventually need to peek under the hood.</p>
+                        </div>
+                        <div class="tool-item">
+                            <h5>Visual Studio Code</h5>
+                            <span class="badge">Free</span> <span class="badge">Essential</span>
+                            <p>The industry standard text editor. Lightweight, compatible with every engine, and
+                                supported by thousands of plugins.</p>
+                            <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer"
+                                class="link-action">Download VS
+                                Code</a>
+                        </div>
+                        <div class="tool-item">
+                            <h5>JetBrains Rider</h5>
+                            <span class="badge">Free Education License</span>
+                            <p>The Ferrari of code editors for Unity and Unreal. Catches errors before you hit "play."
+                            </p>
+                            <a href="https://www.jetbrains.com/community/education/#students" target="_blank"
+                                rel="noopener noreferrer" class="link-action">Get Free Student License</a>
+                        </div>
+                    </article>
+
+                    <!-- Version Control -->
+                    <article class="tool-group">
+                        <div class="tool-header">
+                            <h4>Version Control (Your Time Machine)</h4>
+                            <p>Imagine spending 40 hours building a complex character controller, then accidentally
+                                deleting a critical script.</p>
+                        </div>
+                        <div class="tool-item">
+                            <h5>GitHub Desktop</h5>
+                            <span class="badge">Non-Negotiable</span>
+                            <p>Automatic cloud backup system with unlimited undo. Break something? Roll back. Computer
+                                dies? Clone your project.</p>
+                            <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer"
+                                class="link-action">Download GitHub
+                                Desktop</a>
+                        </div>
+                        <div class="tool-item">
+                            <h5>GitHub Student Pack</h5>
+                            <p>Students can access premium features and additional development tools absolutely free.
+                            </p>
+                            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer"
+                                class="link-action">Get Student
+                                Pack</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Art Tools -->
+                <div class="art-tools mt-large">
+                    <h4>Art Production (Visuals & Polish)</h4>
+                    <div class="grid-3">
+                        <div class="tool-card">
+                            <h5>Blender</h5>
+                            <p class="tool-meta">Industry Standard</p>
+                            <p>The undisputed champion of free 3D software. Sculpting, rigging, rendering, animation.
+                            </p>
+                            <a href="https://www.blender.org/download/" target="_blank" rel="noopener noreferrer"
+                                class="btn-text">Download
+                                Blender →</a>
+                            <p class="tutorial-link">🍩 <a
+                                    href="https://www.youtube.com/playlist?list=PLjEaoINr3zgFX8ZsChQVQsuDSjEqdWMAD"
+                                    target="_blank" rel="noopener noreferrer"><strong>The Blender Donut</strong></a> —
+                                4M+ people's first tutorial</p>
+                        </div>
+                        <div class="tool-card">
+                            <h5>Krita</h5>
+                            <p class="tool-meta">Digital Painting</p>
+                            <p>The best free alternative to Photoshop. Powerful brush engine and layer management.</p>
+                            <a href="https://krita.org/en/download/krita-desktop/" target="_blank"
+                                rel="noopener noreferrer" class="btn-text">Download Krita →</a>
+                        </div>
+                        <div class="tool-card">
+                            <h5>Aseprite</h5>
+                            <p class="tool-meta">Pixel Art</p>
+                            <p>The world's premiere pixel art tool. Timeline-based workflow for intuitive animation.</p>
+                            <a href="https://store.steampowered.com/app/431730/Aseprite/" target="_blank"
+                                rel="noopener noreferrer" class="btn-text">Buy on Steam →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animation & Audio Tools -->
+                <div class="grid-2 mt-large">
+                    <div class="tool-card">
+                        <h5>Mixamo</h5>
+                        <p class="tool-meta">3D Animation</p>
+                        <span class="badge">Free</span> <span class="badge">Adobe Account Required</span>
+                        <p>Instant character rigging and 2,500+ free motion-captured animations. Upload any humanoid
+                            model, download it fully rigged with walk cycles, attacks, and idles.</p>
+                        <a href="https://www.mixamo.com/" target="_blank" rel="noopener noreferrer" class="btn-text">Use
+                            Mixamo →</a>
+                    </div>
+                    <div class="tool-card">
+                        <h5>Audacity</h5>
+                        <p class="tool-meta">Audio Editing</p>
+                        <span class="badge">Free</span> <span class="badge">Open Source</span>
+                        <p>Essential for cutting sound effects, removing noise, normalizing audio levels. Even with free
+                            assets, you'll need to trim and layer sounds.</p>
+                        <a href="https://www.audacityteam.org/download/" target="_blank" rel="noopener noreferrer"
+                            class="btn-text">Download Audacity →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Learning Paths -->
+        <section id="chapter-3" class="chapter learning-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>Chapter Three</h2>
+                    <h3>Curated Learning Paths</h3>
+                    <p>Here's the uncomfortable truth about learning game development online: 95% of tutorials are
+                        mediocre. These are hand-selected learning paths—vetted by successful students.</p>
+                </header>
+
+                <!-- Unity Path -->
+                <div class="learning-path">
+                    <div class="path-header">
+                        <h4>Unity Learning Path (C# Focus)</h4>
+                    </div>
+
+                    <div class="level-group">
+                        <h5 class="level-title">Level 1: Foundation — <em>Build Your First Complete Game</em></h5>
+                        <div class="course-list">
+                            <div class="course-card">
+                                <div class="course-thumb img-placeholder">Kitchen Chaos Thumbnail</div>
+                                <div class="course-info">
+                                    <h6>Unity Basics 2024: Kitchen Chaos</h6>
+                                    <span class="author">by Code Monkey</span>
+                                    <p>The gold standard for modern Unity instruction. You'll build a full cooking game
+                                        and understand professional structure.</p>
+                                    <a href="https://www.youtube.com/watch?v=AmGSEH7QcJg" target="_blank"
+                                        rel="noopener noreferrer" class="btn-small">Watch on YouTube</a>
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-thumb img-placeholder">GMTK Thumbnail</div>
+                                <div class="course-info">
+                                    <h6>How to Make a Video Game</h6>
+                                    <span class="author">by GMTK</span>
+                                    <p>Focuses on what makes games <em>feel</em> good—physics, sound, and satisfaction.
+                                    </p>
+                                    <a href="https://www.youtube.com/watch?v=AmGSEH7QcJg" target="_blank"
+                                        rel="noopener noreferrer" class="btn-small">Watch on YouTube</a>
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-thumb img-placeholder">Jason Weimann Thumbnail</div>
+                                <div class="course-info">
+                                    <h6>C# Survival Guide</h6>
+                                    <span class="author">by Jason Weimann</span>
+                                    <p>Bridges the gap between general C# programming and Unity's specific API.</p>
+                                    <a href="https://www.youtube.com/c/JasonWeimann" target="_blank"
+                                        rel="noopener noreferrer" class="btn-small">Visit Channel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="level-group">
+                        <h5 class="level-title">Level 2: Intermediate — <em>Systems Thinking & Architecture</em></h5>
+                        <ul class="resource-list">
+                            <li><a href="https://www.youtube.com/playlist?list=PLQMQNmwN3FvyL78T97K6O8Kog2jN4wP3A"
+                                    target="_blank" rel="noopener noreferrer">Netcode for GameObjects (Multiplayer)</a>
+                                - Code Monkey</li>
+                            <li><a href="https://www.youtube.com/@Bardent" target="_blank"
+                                    rel="noopener noreferrer">State Machines & AI</a> -
+                                Bardent</li>
+                            <li><a href="https://www.youtube.com/@GabrielAguiarProd" target="_blank"
+                                    rel="noopener noreferrer">Shader Graph
+                                    Mastery</a> - Gabriel Aguiar</li>
+                        </ul>
+                    </div>
+
+                    <div class="level-group">
+                        <h5 class="level-title">Level 3: Advanced — <em>Optimization & Mathematical Foundations</em>
+                        </h5>
+                        <ul class="resource-list">
+                            <li><a href="https://www.youtube.com/watch?v=MOYiVLE9L6w" target="_blank"
+                                    rel="noopener noreferrer">Math for Game Developers</a> - Freya Holmér</li>
+                            <li><a href="https://www.youtube.com/@TurboMakesGames" target="_blank"
+                                    rel="noopener noreferrer">Unity ECS & DOTS</a> - Turbo Makes Games</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Unreal Path -->
+                <div class="learning-path">
+                    <div class="path-header">
+                        <h4>Unreal Engine 5 Path</h4>
+                    </div>
+                    <div class="level-group">
+                        <h5 class="level-title">Level 1: Foundation — <em>Understanding the Ecosystem</em></h5>
+                        <div class="course-list">
+                            <div class="course-card">
+                                <div class="course-thumb img-placeholder">Unreal Sensei Thumbnail</div>
+                                <div class="course-info">
+                                    <h6>UE5 Beginner Tutorial</h6>
+                                    <span class="author">by Unreal Sensei</span>
+                                    <p>5-hour comprehensive introduction to Lumen, Nanite, and Blueprints.</p>
+                                    <a href="https://www.youtube.com/watch?v=k-zRp3z8CnE" target="_blank"
+                                        rel="noopener noreferrer" class="btn-small">Watch on YouTube</a>
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-thumb img-placeholder">Epic Games Thumbnail</div>
+                                <div class="course-info">
+                                    <h6>Your First Game: Stack-O-Bot</h6>
+                                    <span class="author">by Epic Games</span>
+                                    <p>Epic's official guided project teaching the Character Movement Component.</p>
+                                    <a href="https://dev.epicgames.com/community/learning/paths/OR/your-first-game-in-unreal-engine-5"
+                                        target="_blank" rel="noopener noreferrer" class="btn-small">Official
+                                        Tutorial</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <h5 class="level-title">Level 2: Intermediate — <em>Code & Core Gameplay Systems</em></h5>
+                        <ul class="resource-list">
+                            <li><a href="https://www.udemy.com/course/unreal-engine-5-cpp-development-learn-c-plus-plus-by-creating-games/"
+                                    target="_blank" rel="noopener noreferrer">Unreal C++ for Beginners</a> - Stephen
+                                Ulibarri</li>
+                            <li><a href="https://www.youtube.com/@DelGoodie" target="_blank"
+                                    rel="noopener noreferrer">Gameplay Ability System
+                                    (GAS)</a> - DelGoodie</li>
+                            <li><a href="https://www.youtube.com/@cghow" target="_blank"
+                                    rel="noopener noreferrer">Niagara VFX System</a> - CGHOW</li>
+                        </ul>
+                    </div>
+                    <div class="level-group">
+                        <h5 class="level-title">Level 3: Advanced — <em>Professional Engineering Practices</em></h5>
+                        <ul class="resource-list">
+                            <li><a href="https://www.youtube.com/@Cedtricks" target="_blank"
+                                    rel="noopener noreferrer">Multiplayer Networking & Replication</a>
+                                - Cedtricks</li>
+                            <li><a href="https://www.youtube.com/@AdrienLogut" target="_blank"
+                                    rel="noopener noreferrer">Procedural Content Generation (PCG)</a> - Adrien Logut
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Godot Path -->
+                <div class="learning-path">
+                    <div class="path-header">
+                        <h4>Godot 4.x Path</h4>
+                    </div>
+                    <div class="level-group">
+                        <h5 class="level-title">Level 1: Foundation — <em>Nodes, Scenes & Signals</em></h5>
+                        <div class="course-list">
+                            <div class="course-card">
+                                <div class="course-thumb img-placeholder">Clear Code Thumbnail</div>
+                                <div class="course-info">
+                                    <h6>Ultimate Godot Intro 2024</h6>
+                                    <span class="author">by Clear Code</span>
+                                    <p>11-hour masterclass covering 2D, 3D, and node-based architecture.</p>
+                                    <a href="https://www.youtube.com/watch?v=nAh_Kx5Zh5Q" target="_blank"
+                                        rel="noopener noreferrer" class="btn-small">Watch on YouTube</a>
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-thumb img-placeholder">Brackeys Thumbnail</div>
+                                <div class="course-info">
+                                    <h6>Godot 4 Crash Course</h6>
+                                    <span class="author">by Brackeys</span>
+                                    <p>High-energy introduction to Godot 4's modernized workflow.</p>
+                                    <a href="https://www.youtube.com/watch?v=LOhfqjmasi0" target="_blank"
+                                        rel="noopener noreferrer" class="btn-small">Watch on YouTube</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-group">
+                        <h5 class="level-title">Level 2: Intermediate — <em>3D Games & Scalable Systems</em></h5>
+                        <ul class="resource-list">
+                            <li><a href="https://www.youtube.com/@Lukky" target="_blank" rel="noopener noreferrer">3D
+                                    Platformer Mastery</a> -
+                                Lukky</li>
+                            <li><a href="https://www.youtube.com/@MakerTech" target="_blank"
+                                    rel="noopener noreferrer">Resources & Data
+                                    Management</a> - Maker Tech</li>
+                            <li><a href="https://www.youtube.com/@Firebelley" target="_blank"
+                                    rel="noopener noreferrer">Event Bus Architecture</a> - Firebelley Games</li>
+                        </ul>
+                    </div>
+                    <div class="level-group">
+                        <h5 class="level-title">Level 3: Advanced — <em>Shaders & Engine Extensions</em></h5>
+                        <ul class="resource-list">
+                            <li><a href="https://www.youtube.com/@StayAtHomeDev" target="_blank"
+                                    rel="noopener noreferrer">Godot Shaders 101</a> -
+                                StayAtHomeDev</li>
+                            <li><a href="https://www.youtube.com/@BastiaanOlij" target="_blank"
+                                    rel="noopener noreferrer">GDExtension: Integrating C++</a> - Bastiaan Olij</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Jams Section -->
+        <section class="chapter game-jams-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>🏆 Game Jams: Accelerated Learning</h2>
+                    <p>A game jam is a timed event where you build a complete game in 48-72 hours. It sounds insane. It
+                        is. It's also the single fastest way to improve.</p>
+                </header>
+
+                <div class="grid-3">
+                    <div class="jam-card">
+                        <h4>Ludum Dare</h4>
+                        <p class="jam-meta">Runs 3x per year</p>
+                        <p>The granddaddy of jams. Massive community feedback. Running since 2002.</p>
+                        <a href="https://ldjam.com/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-secondary">Join Ludum Dare</a>
+                    </div>
+                    <div class="jam-card">
+                        <h4>GMTK Game Jam</h4>
+                        <p class="jam-meta">Annually in July • 50,000+ participants</p>
+                        <p>Incredible exposure and feedback. One of the largest jams in existence.</p>
+                        <a href="https://itch.io/jam/gmtk-2024" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-secondary">Learn More</a>
+                    </div>
+                    <div class="jam-card">
+                        <h4>Weekly Game Jam</h4>
+                        <p class="jam-meta">Every week</p>
+                        <p>Low pressure, perfect for building the habit. Start here if you're nervous.</p>
+                        <a href="https://itch.io/jams" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-secondary">Browse Jams</a>
+                    </div>
+                </div>
+
+                <p class="jam-reminder"><em>Your first jam game will be broken. Submit it anyway. You'll learn more in
+                        one weekend than a month of tutorials.</em></p>
+            </div>
+        </section>
+
+        <!-- Chapter 4: Assets -->
+        <section id="chapter-4" class="chapter assets-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>Chapter Four</h2>
+                    <h3>Free Assets: The Legal Way</h3>
+                    <p class="warning">⚠️ CRITICAL: Never use images from Google searches in your games. Copyright
+                        violations can destroy your project.</p>
+                </header>
+
+                <div class="grid-2">
+                    <div class="asset-source">
+                        <div class="source-content">
+                            <h4>Kenney.nl</h4>
+                            <span class="badge">CC0 Public Domain</span>
+                            <p>The gold standard for free game assets. Thousands of 2D sprites, 3D models, UI elements,
+                                and sound effects. No attribution required.</p>
+                            <a href="https://www.kenney.nl/assets" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-secondary">Browse
+                                Assets</a>
+                        </div>
+                    </div>
+                    <div class="asset-source">
+                        <div class="source-content">
+                            <h4>Poly Haven</h4>
+                            <span class="badge">CC0 Public Domain</span>
+                            <p>Photorealistic 3D models, HDR skyboxes, and PBR textures. Essential for creating
+                                convincing environments in Unreal or Godot.</p>
+                            <a href="https://polyhaven.com/" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-secondary">Browse Poly
+                                Haven</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-2 mt-small">
+                    <div class="asset-source">
+                        <h4>Freesound.org</h4>
+                        <p>Massive database of sound effects. Filter by CC0 for no-attribution assets.</p>
+                        <a href="https://freesound.org/" target="_blank" rel="noopener noreferrer"
+                            class="link-action">Visit Freesound</a>
+                    </div>
+                    <div class="asset-source">
+                        <h4>Google Fonts</h4>
+                        <p>Free, professionally designed typography safe for commercial games.</p>
+                        <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer"
+                            class="link-action">Browse Fonts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publishing Section -->
+        <section class="chapter publishing-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>🚀 Publish Your First Game</h2>
+                    <p>Where are you supposed to <em>release</em> your first game? Here:</p>
+                </header>
+
+                <div class="publishing-cta">
+                    <div class="publish-content">
+                        <h4>Itch.io</h4>
+                        <span class="badge">Free to Publish</span>
+                        <p>The indie game storefront. Upload your first game within 30 days of starting. It doesn't need
+                            to be good. It needs to exist publicly. You'll get real players, real feedback, and real
+                            motivation.</p>
+                        <a href="https://itch.io/" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-primary">Create Account</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productivity Tools -->
+        <section class="chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h3>Productivity Tools</h3>
+                </header>
+                <div class="grid-2">
+                    <div class="tool-card simple">
+                        <h5>Trello</h5>
+                        <p>Project management simplified. Boards, lists, cards. Move tasks through: "To Do → In Progress
+                            → Testing → Complete."</p>
+                        <a href="https://trello.com/" target="_blank" rel="noopener noreferrer">Try Trello</a>
+                    </div>
+                    <div class="tool-card simple">
+                        <h5>Obsidian</h5>
+                        <p>The ultimate tool for GDDs, lore, mechanics tracking, and interconnected notes.</p>
+                        <a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer">Download Obsidian</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="chapter community-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h3>🤝 Community & Support</h3>
+                    <p>Stuck on a bug at 2 AM? These communities have your back:</p>
+                </header>
+                <div class="community-grid">
+                    <ul class="community-list">
+                        <li><strong>r/gamedev</strong> — 1.5M+ developers, beginner-friendly questions welcome</li>
+                        <li><strong>Godot Discord</strong> — 80K+ members, incredibly helpful and welcoming</li>
+                        <li><strong>Unity Discord</strong> — Official community, very active for all skill levels</li>
+                        <li><strong>Unreal Slackers Discord</strong> — The go-to UE community</li>
+                        <li><strong>Game Dev League</strong> — Cross-engine, great for networking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- First Week Roadmap -->
+        <section class="chapter roadmap-chapter">
+            <div class="container">
+                <header class="chapter-header">
+                    <h2>📅 Your First Week Roadmap</h2>
+                    <p>Don't know where to start? Here's your exact plan:</p>
+                </header>
+
+                <div class="roadmap-timeline">
+                    <div class="roadmap-day">
+                        <span class="day-label">Day 1-2</span>
+                        <p>Download your chosen engine. Complete the official "getting started" tutorial.</p>
+                    </div>
+                    <div class="roadmap-day">
+                        <span class="day-label">Day 3-4</span>
+                        <p>Make a square move with keyboard input.</p>
+                    </div>
+                    <div class="roadmap-day">
+                        <span class="day-label">Day 5-6</span>
+                        <p>Add a second object that the square can collide with.</p>
+                    </div>
+                    <div class="roadmap-day">
+                        <span class="day-label">Day 7</span>
+                        <p>Add a sound effect when collision happens.</p>
+                    </div>
+                </div>
+
+                <p class="roadmap-success"><em>Congratulations—you just built a game. It's terrible. That's
+                        perfect.</em></p>
+            </div>
+        </section>
+
+        <!-- Finale -->
+        <section class="finale">
+            <div class="container">
+                <div class="finale-content">
+                    <h2>Your Next Step</h2>
+                    <p class="lead">You have everything you need. What you don't need is more research.</p>
+                    <p>The difference between someone who wants to make games and someone who makes games is simple:
+                        <strong>they start.</strong>
+                    </p>
+
+                    <div class="action-box">
+                        <p>Pick an engine. Download it today. Follow the first tutorial.</p>
+                        <p class="highlight">Your first game won't be perfect. It just needs to exist.</p>
+                        <p class="cta">Now go build it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h2>GAME CREATORS SPACE</h2>
+                    <p class="meeting-detail">MON @ 12PM | WB314</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Game Creators Space. All rights reserved. <br>
+                Made with ❤️ for aspiring game developers.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

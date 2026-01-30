@@ -444,3 +444,844 @@ footer {
         text-align: center;
     }
 }
+
+/* ==========================================================================
+   Getting Started Guide Styles
+   ========================================================================== */
+
+/* Guide Hero Specifics */
+.guide-hero .hero-description {
+    font-size: 1.25rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.guide-hero .hero-placeholder {
+    width: 100%;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 4rem 0;
+    background-color: var(--color-white);
+    text-align: center;
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.quote-section blockquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--color-black);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+/* Chapters Common */
+.chapter {
+    padding: 5rem 0;
+}
+
+.chapter:nth-child(even) {
+    background-color: var(--color-gray-light);
+}
+
+.chapter-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.chapter-header h2 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.chapter-header h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.chapter-header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.chapter-header .warning {
+    color: #d32f2f;
+    font-weight: bold;
+    background: #ffebee;
+    padding: 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Grids */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.mt-large {
+    margin-top: 4rem;
+}
+
+.mt-small {
+    margin-top: 2rem;
+}
+
+/* Cards */
+.card {
+    background: var(--color-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    height: 180px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tags {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.8rem;
+    background: var(--color-gray-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #555;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #444;
+    flex: 1;
+}
+
+.specs {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+}
+
+.specs li {
+    margin-bottom: 0.25rem;
+}
+
+.btn-text {
+    font-weight: bold;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-top: auto;
+    display: inline-block;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+}
+
+/* Tools */
+.tool-group {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tool-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 1rem;
+}
+
+.tool-item {
+    margin-bottom: 2rem;
+}
+
+.tool-item:last-child {
+    margin-bottom: 0;
+}
+
+.tool-item h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    background: var(--color-accent);
+    color: var(--color-black);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.tool-item p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.link-action {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.tool-card {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.tool-card h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.tool-meta {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Learning Paths */
+.learning-path {
+    background: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+}
+
+.path-header {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 1.5rem 2rem;
+}
+
+.path-header h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.level-group {
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.level-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.course-card {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.course-thumb {
+    width: 160px;
+    height: 90px;
+    background: #ddd;
+    flex-shrink: 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #666;
+    text-align: center;
+}
+
+.course-info h6 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.author {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.course-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.resource-list li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-list a {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.resource-list a:hover {
+    text-decoration: underline;
+}
+
+/* Assets */
+.asset-source {
+    background: var(--color-white);
+    padding: 2rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.source-content {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.asset-source h4 {
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.btn-secondary {
+    background: var(--color-gray-light);
+    color: var(--color-black);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+}
+
+/* Finale */
+.finale {
+    background: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.finale-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.finale h2 {
+    font-size: 4rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.finale .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.action-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.highlight {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin: 1rem 0;
+    color: var(--color-accent);
+}
+
+.cta {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+/* Responsive Guide Adjustments */
+@media (max-width: 768px) {
+    .guide-hero .hero-content {
+        text-align: center;
+    }
+
+    .course-card {
+        flex-direction: column;
+    }
+
+    .course-thumb {
+        width: 100%;
+        height: 150px;
+    }
+
+    .asset-source {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .source-content {
+        margin-right: 0;
+    }
+
+    .finale h2 {
+        font-size: 2.5rem;
+    }
+
+    .cta {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================================================
+   New Expert-Recommended Sections
+   ========================================================================== */
+
+/* Scope Warning Section */
+.scope-warning-chapter {
+    background: #fff3cd;
+    border-bottom: 3px solid #ffc107;
+}
+
+.scope-warning-chapter .chapter-header h2 {
+    font-size: 2.5rem;
+    color: #856404;
+}
+
+.scope-box {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scope-box h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.scope-box ul {
+    list-style: none;
+}
+
+.scope-box li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.scope-good {
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+}
+
+.scope-good h4 {
+    color: #155724;
+}
+
+.scope-bad {
+    background: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+
+.scope-bad h4 {
+    color: #721c24;
+}
+
+.scope-reminder {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: #856404;
+}
+
+/* Engine Cards - Warnings & Pro Tips */
+.engine-warning {
+    background: #fff3cd;
+    border-left: 3px solid #ffc107;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: #856404;
+    margin-bottom: 0.5rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.pro-tip {
+    background: #d1ecf1;
+    border-left: 3px solid #17a2b8;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: #0c5460;
+    margin-bottom: 1rem;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Non-Programmer Note */
+.non-programmer-note {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px dashed var(--color-primary);
+    text-align: center;
+}
+
+.non-programmer-note h4 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.alt-tool {
+    background: var(--color-gray-light);
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.alt-tool strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-black);
+}
+
+.alt-tool span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Blender Donut / Tutorial Links in Tool Cards */
+.tutorial-link {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.tutorial-link a {
+    color: var(--color-primary);
+}
+
+/* Game Jams Section */
+.game-jams-chapter {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: var(--color-white);
+}
+
+.game-jams-chapter .chapter-header h2 {
+    color: var(--color-accent);
+    font-size: 2.5rem;
+}
+
+.game-jams-chapter .chapter-header p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.jam-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.jam-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.jam-card h4 {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: 0.25rem;
+}
+
+.jam-meta {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.jam-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.jam-reminder {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    color: var(--color-accent);
+    font-style: italic;
+}
+
+/* Publishing Section */
+.publishing-chapter {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.publishing-chapter .chapter-header h2 {
+    color: var(--color-white);
+    font-size: 2.5rem;
+}
+
+.publishing-chapter .chapter-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.publishing-cta {
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.publish-content h4 {
+    font-size: 2.5rem;
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+}
+
+.publish-content p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Community Section */
+.community-chapter {
+    background: var(--color-gray-light);
+}
+
+.community-grid {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.community-list {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.community-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05rem;
+}
+
+.community-list li:last-child {
+    border-bottom: none;
+}
+
+.community-list strong {
+    color: var(--color-primary);
+}
+
+/* First Week Roadmap */
+.roadmap-chapter {
+    background: var(--color-white);
+}
+
+.roadmap-chapter .chapter-header h2 {
+    color: var(--color-black);
+    font-size: 2.5rem;
+}
+
+.roadmap-timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-primary);
+}
+
+.roadmap-day {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.roadmap-day::before {
+    content: '';
+    position: absolute;
+    left: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    box-shadow: 0 0 0 3px var(--color-primary);
+}
+
+.day-label {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    min-width: 100px;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.roadmap-day p {
+    font-size: 1.1rem;
+    color: #333;
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.roadmap-success {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    color: var(--color-primary);
+    padding: 1.5rem;
+    background: var(--color-gray-light);
+    border-radius: 8px;
+}
+
+/* Responsive Adjustments for New Sections */
+@media (max-width: 768px) {
+    .scope-box {
+        padding: 1.5rem;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jam-card {
+        padding: 1.5rem;
+    }
+
+    .publishing-cta {
+        padding: 2rem;
+    }
+
+    .roadmap-timeline::before {
+        left: 30px;
+    }
+
+    .roadmap-day::before {
+        left: 22px;
+    }
+
+    .day-label {
+        min-width: 70px;
+        font-size: 1rem;
+        padding-right: 1rem;
+    }
+
+    .roadmap-day p {
+        font-size: 1rem;
+    }
+}
