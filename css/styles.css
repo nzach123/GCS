@@ -657,34 +657,6 @@ footer {
 }
 
 /* Tools */
-.tool-group {
-    background: var(--color-white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.tool-header {
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 1rem;
-}
-
-.tool-item {
-    margin-bottom: 2rem;
-}
-
-.tool-item:last-child {
-    margin-bottom: 0;
-}
-
-.tool-item h5 {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-    display: inline-block;
-    margin-right: 0.5rem;
-}
-
 .badge {
     font-size: 0.75rem;
     background: var(--color-accent);
@@ -693,39 +665,6 @@ footer {
     border-radius: 3px;
     font-weight: bold;
     vertical-align: middle;
-}
-
-.tool-item p {
-    margin-bottom: 0.5rem;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-.link-action {
-    color: var(--color-primary);
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.tool-card {
-    background: var(--color-white);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #eee;
-    text-align: center;
-}
-
-.tool-card h5 {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-}
-
-.tool-meta {
-    font-size: 0.85rem;
-    color: #888;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
 }
 
 /* Learning Paths */
@@ -838,112 +777,7 @@ footer {
     border-bottom: 2px solid var(--color-primary);
 }
 
-.asset-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1rem;
-}
 
-.asset-card {
-    background: var(--color-white);
-    padding: 1.25rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.asset-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-.asset-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.asset-card h5 {
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-.asset-card h5 a {
-    color: var(--color-black);
-    transition: color 0.2s;
-}
-
-.asset-card h5 a:hover {
-    color: var(--color-primary);
-}
-
-/* License Badges - Color Coded */
-.badge-cc0 {
-    background: #d4edda;
-    color: #155724;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.badge-attribution {
-    background: #fff3cd;
-    color: #856404;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.badge-restricted {
-    background: #f8d7da;
-    color: #721c24;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.badge-mixed {
-    background: #e2e3e5;
-    color: #383d41;
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.asset-best-for {
-    font-size: 0.85rem;
-    color: var(--color-primary);
-    font-weight: 500;
-    margin-bottom: 0.35rem;
-}
-
-.asset-description {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
-}
-
-.asset-warning {
-    background: #fff3cd;
-    border-left: 3px solid #ffc107;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
-    color: #856404;
-    margin-bottom: 0.75rem;
-    border-radius: 0 4px 4px 0;
-}
 
 .asset-note {
     background: #d1ecf1;
@@ -953,38 +787,6 @@ footer {
     color: #0c5460;
     margin-bottom: 0.75rem;
     border-radius: 0 4px 4px 0;
-}
-
-.asset-link {
-    color: var(--color-primary);
-    font-weight: 600;
-    font-size: 0.85rem;
-}
-
-.asset-link:hover {
-    text-decoration: underline;
-}
-
-/* Legacy asset-source support */
-.asset-source {
-    background: var(--color-white);
-    padding: 2rem;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.source-content {
-    flex: 1;
-    margin-right: 1rem;
-}
-
-.asset-source h4 {
-    font-size: 1.5rem;
-    display: inline-block;
-    margin-right: 0.5rem;
 }
 
 .btn-secondary {
@@ -997,16 +799,6 @@ footer {
     white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-    .asset-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .asset-card-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
 
 /* Finale */
 .finale {
@@ -1327,146 +1119,6 @@ footer {
     text-decoration: underline;
 }
 
-/* ==========================================================================
-   Rapid Prototyping & Retro Systems Section
-   ========================================================================== */
-
-.rapid-prototyping-section {
-    background: #f5f5f5;
-    padding: 2.5rem;
-    border-radius: 8px;
-}
-
-/* Two-column layout for rapid prototyping */
-.rapid-prototyping-layout {
-    display: flex;
-    gap: 2rem;
-    align-items: stretch;
-}
-
-.rapid-prototyping-content {
-    flex: 1;
-}
-
-.rapid-prototyping-image {
-    flex: 1;
-    display: flex;
-    align-items: stretch;
-}
-
-.rapid-prototyping-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.rapid-prototyping-image .img-placeholder {
-    width: 100%;
-    min-height: 250px;
-    background: #ddd;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-weight: bold;
-}
-
-@media (max-width: 768px) {
-    .rapid-prototyping-layout {
-        flex-direction: column;
-    }
-
-    .rapid-prototyping-image .img-placeholder {
-        min-height: 200px;
-    }
-}
-
-.rapid-prototyping-section h4 {
-    font-size: 1.5rem;
-    color: var(--color-black);
-    margin-bottom: 0.75rem;
-    text-align: left;
-}
-
-.rapid-prototyping-section p {
-    text-align: left;
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.rapid-tools-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-
-@media (max-width: 900px) {
-    .rapid-tools-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-    .rapid-tools-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.rapid-tool-card {
-    background: var(--color-white);
-    padding: 1.25rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #e0e0e0;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.rapid-tool-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    border-color: var(--color-primary);
-}
-
-.rapid-tool-card strong {
-    font-size: 1.1rem;
-    color: var(--color-black);
-}
-
-.rapid-tool-card span {
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.4;
-}
-
-/* Rapid Tools List - Simple bullet format (matches markdown) */
-.rapid-tools-list {
-    list-style: disc;
-    padding-left: 1.5rem;
-    margin: 0;
-}
-
-.rapid-tools-list li {
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.6;
-}
-
-.rapid-tools-list a {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-.rapid-tools-list a:hover {
-    text-decoration: underline;
-}
 
 /* Legacy support - keep old styles but hidden */
 .non-programmer-note {
@@ -1801,96 +1453,20 @@ footer {
     }
 }
 
-/* Compact Tool Card - Option B */
-.tool-card-compact {
-    display: flex;
-    gap: 0.75rem;
-    padding: 0.875rem 1rem;
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 6px;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    align-items: flex-start;
-    text-decoration: none;
-    color: inherit;
-}
 
-.tool-card-compact:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 2px 8px rgba(0, 119, 200, 0.1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .tool-card-compact {
-        transition: none;
-    }
-}
-
-/* Logo Placeholder */
-.tool-logo {
-    width: 32px;
-    height: 32px;
-    background: #f5f5f5;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: #999;
-    text-transform: uppercase;
-}
-
-/* Tool Info */
-.tool-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.tool-info h6 {
-    font-size: 0.95rem;
-    margin: 0 0 0.125rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    line-height: 1.3;
-}
-
-.tool-info p {
-    font-size: 0.8rem;
-    color: #666;
-    margin: 0;
-    line-height: 1.35;
-}
-
-/* Inline link styling */
-.tool-info .tool-link {
-    font-size: 0.75rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    margin-top: 0.25rem;
-    display: inline-block;
-}
-
-.tool-info .tool-link:hover {
-    text-decoration: underline;
-}
-
-/* Compact Badges */
+/* Standardized Badges */
 .badge {
-    font-size: 0.65rem;
-    padding: 0.125rem 0.35rem;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
     border-radius: 3px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     vertical-align: middle;
+    display: inline-block;
 }
 
-.badge-free {
+.badge-free, .badge-cc0 {
     background: #d4edda;
     color: #155724;
 }
@@ -1910,25 +1486,139 @@ footer {
     color: #004085;
 }
 
-/* Pro Alternatives - Subtle styling */
-.pro-alternatives {
-    margin-top: 0.5rem;
+.badge-attribution {
+    background: #fff3cd;
+    color: #856404;
 }
 
-.pro-alternatives-label {
-    font-size: 0.7rem;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.badge-restricted {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.badge-mixed {
+    background: #e2e3e5;
+    color: #383d41;
+}
+
+/* ==========================================================================
+   Unified Resource Card System
+   ========================================================================== */
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.resource-card {
+    background: var(--color-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.resource-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+}
+
+.resource-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.resource-logo {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.resource-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--color-black);
+}
+
+.resource-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.resource-title a:hover {
+    color: var(--color-primary);
+}
+
+.resource-badge-container {
+    flex-shrink: 0;
+}
+
+.resource-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.resource-meta {
+    font-size: 0.85rem;
+    color: var(--color-primary);
     font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-.pro-alternatives .tool-card-compact {
-    background: #fafafa;
-    border-color: #eee;
+.resource-footer {
+    margin-top: auto;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1rem;
 }
 
-.pro-alternatives .tool-card-compact:hover {
-    background: #fff;
+.resource-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+.resource-warning {
+    font-size: 0.8rem;
+    background: #fff3cd;
+    color: #856404;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
 }

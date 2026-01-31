@@ -32,6 +32,7 @@
         <section class="hero guide-hero">
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="tagline">GAME DEV 101</div>
                     <h1 class="hero-title">Your First Game<br>Starts Here</h1>
                     <p class="hero-subtitle">Stop Playing. Start Creating.</p>
                     <p class="hero-description">
@@ -120,30 +121,69 @@
                 </div>
 
                 <!-- Rapid Prototyping & Retro Systems -->
-                <div class="rapid-prototyping-section mt-large">
-                    <div class="rapid-prototyping-layout">
-                        <div class="rapid-prototyping-content">
-                            <h4>Rapid Prototyping & Retro Systems</h4>
-                            <p>For game jams, concept validation, or highly stylized retro projects, we deploy
-                                specialized engines to cut development time significantly.</p>
-                            <ul class="rapid-tools-list">
-                                <li><a href="https://www.construct.net/" target="_blank"
-                                        rel="noopener noreferrer"><strong>Construct 3:</strong></a> Logic-heavy 2D
-                                    prototypes and HTML5 delivery.</li>
-                                <li><a href="https://www.lexaloffle.com/pico-8.php" target="_blank"
-                                        rel="noopener noreferrer"><strong>Pico-8:</strong></a> Authentic 8-bit
-                                    constraints and fantasy console development.</li>
-                                <li><a href="https://www.gbstudio.dev/" target="_blank"
-                                        rel="noopener noreferrer"><strong>GB Studio:</strong></a> Native Game Boy ROM
-                                    creation and handheld hardware compatibility.</li>
-                                <li><a href="https://www.rpgmakerweb.com/" target="_blank"
-                                        rel="noopener noreferrer"><strong>RPG Maker:</strong></a> Narrative-focused
-                                    prototyping and classic JRPG systems.</li>
-                            </ul>
-                        </div>
-                        <div class="rapid-prototyping-image">
-                            <img src="assets/photos/45948.jpg" alt="Retro gaming systems">
-                        </div>
+                <div class="tool-category mt-large">
+                    <h4 class="asset-category-title">Rapid Prototyping & Retro Systems</h4>
+                    <p class="section-subtitle mb-small">For game jams, concept validation, or highly stylized retro projects, we deploy specialized engines to cut development time significantly.</p>
+                    <div class="resource-grid">
+                        <!-- Construct 3 -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Construct 3</h5>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>Logic-heavy 2D prototypes and HTML5 delivery.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://www.construct.net/" target="_blank" rel="noopener noreferrer" class="resource-link">Visit Website</a>
+                            </div>
+                        </article>
+
+                        <!-- Pico-8 -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Pico-8</h5>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>Authentic 8-bit constraints and fantasy console development.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://www.lexaloffle.com/pico-8.php" target="_blank" rel="noopener noreferrer" class="resource-link">Visit Website</a>
+                            </div>
+                        </article>
+
+                        <!-- GB Studio -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">GB Studio</h5>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>Native Game Boy ROM creation and handheld hardware compatibility.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://www.gbstudio.dev/" target="_blank" rel="noopener noreferrer" class="resource-link">Visit Website</a>
+                            </div>
+                        </article>
+
+                        <!-- RPG Maker -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">RPG Maker</h5>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>Narrative-focused prototyping and classic JRPG systems.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://www.rpgmakerweb.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Visit Website</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -159,252 +199,436 @@
                         tools that handle everything from writing code to preventing catastrophic file loss.</p>
                 </header>
 
-                <div class="grid-2">
-                    <!-- Code Editors -->
-                    <article class="tool-group">
-                        <div class="tool-header">
-                            <h4>Code Editors (Your Digital Workspace)</h4>
-                            <p>Even if you're using visual scripting, you'll eventually need to peek under the hood.</p>
-                        </div>
-                        <div class="tool-item">
-                            <h5>Visual Studio Code</h5>
-                            <span class="badge">Free</span> <span class="badge">Essential</span>
-                            <p>The industry standard text editor. Lightweight, compatible with every engine, and
-                                supported by thousands of plugins.</p>
-                            <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer"
-                                class="link-action">Download VS
-                                Code</a>
-                        </div>
-                        <div class="tool-item">
-                            <h5>JetBrains Rider</h5>
-                            <span class="badge">Free Education License</span>
-                            <p>The Ferrari of code editors for Unity and Unreal. Catches errors before you hit "play."
-                            </p>
-                            <a href="https://www.jetbrains.com/community/education/#students" target="_blank"
-                                rel="noopener noreferrer" class="link-action">Get Free Student License</a>
-                        </div>
-                    </article>
+                <!-- Code Editors -->
+                <div class="tool-category">
+                    <h4 class="asset-category-title">Code Editors</h4>
+                    <p class="section-subtitle mb-small">Even if you're using visual scripting, you'll eventually need to peek under the hood.</p>
+                    <div class="resource-grid">
+                        <!-- VS Code -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Visual Studio Code</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-essential">Essential</span>
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>The industry standard text editor. Lightweight, compatible with every engine, and supported by thousands of plugins.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Download VS Code</a>
+                            </div>
+                        </article>
 
-                    <!-- Version Control -->
-                    <article class="tool-group">
-                        <div class="tool-header">
-                            <h4>Version Control (Your Time Machine)</h4>
-                            <p>Imagine spending 40 hours building a complex character controller, then accidentally
-                                deleting a critical script.</p>
-                        </div>
-                        <div class="tool-item">
-                            <h5>GitHub Desktop</h5>
-                            <span class="badge">Non-Negotiable</span>
-                            <p>Automatic cloud backup system with unlimited undo. Break something? Roll back. Computer
-                                dies? Clone your project.</p>
-                            <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer"
-                                class="link-action">Download GitHub
-                                Desktop</a>
-                        </div>
-                        <div class="tool-item">
-                            <h5>GitHub Student Pack</h5>
-                            <p>Students can access premium features and additional development tools absolutely free.
-                            </p>
-                            <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer"
-                                class="link-action">Get Student
-                                Pack</a>
-                        </div>
-                    </article>
+                        <!-- JetBrains Rider -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">JetBrains Rider</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free Education</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>The Ferrari of code editors for Unity and Unreal. Catches errors before you hit "play."</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener noreferrer" class="resource-link">Get Free Student License</a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
 
-                <!-- Art Production -->
-                <h4>Art Production</h4>
-
-                <!-- 3D Modeling & Sculpting -->
+                <!-- Version Control -->
                 <div class="tool-category">
-                    <h5>3D Modeling & Sculpting</h5>
-                    <div class="tool-grid">
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">BL</div>
-                            <div class="tool-info">
-                                <h6>Blender <span class="badge badge-free">Free</span></h6>
+                    <h4 class="asset-category-title">Version Control</h4>
+                    <p class="section-subtitle mb-small">Imagine spending 40 hours building a complex character controller, then accidentally deleting a critical script.</p>
+                    <div class="resource-grid">
+                        <!-- GitHub Desktop -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">GitHub Desktop</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-essential">Non-Negotiable</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>Automatic cloud backup system with unlimited undo. Break something? Roll back. Computer dies? Clone your project.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Download GitHub Desktop</a>
+                            </div>
+                        </article>
+
+                        <!-- GitHub Student Pack -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">GitHub Student Pack</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p>Students can access premium features and additional development tools absolutely free.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="resource-link">Get Student Pack</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 3D Modeling -->
+                <div class="tool-category">
+                    <h4 class="asset-category-title">3D Modeling & Sculpting</h4>
+                    <div class="resource-grid">
+                        <!-- Blender -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">BL</div>
+                                    <h5 class="resource-title">Blender</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Complete 3D pipeline: modeling, animation, rigging, VFX.</p>
-                                <a class="tool-link" href="https://www.blender.org/download/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">MV</div>
-                            <div class="tool-info">
-                                <h6>MagicaVoxel <span class="badge badge-free">Free</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://www.blender.org/download/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
+
+                        <!-- MagicaVoxel -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">MV</div>
+                                    <h5 class="resource-title">MagicaVoxel</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Voxel art for blocky aesthetic games. Built-in renderer.</p>
-                                <a class="tool-link" href="https://ephtracy.github.io/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">MY</div>
-                            <div class="tool-info">
-                                <h6>Autodesk Maya <span class="badge badge-paid">Paid</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://ephtracy.github.io/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
+
+                        <!-- Maya -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">MY</div>
+                                    <h5 class="resource-title">Autodesk Maya</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-paid">Paid</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Gold standard for character animation and rigging.</p>
-                                <a class="tool-link" href="https://www.autodesk.com/products/maya/overview"
-                                    target="_blank" rel="noopener noreferrer">Get Maya →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">ZB</div>
-                            <div class="tool-info">
-                                <h6>Maxon ZBrush <span class="badge badge-paid">Paid</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener noreferrer" class="resource-link">Get Maya</a>
+                            </div>
+                        </article>
+
+                        <!-- ZBrush -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">ZB</div>
+                                    <h5 class="resource-title">Maxon ZBrush</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-paid">Paid</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Digital sculpting king. High-poly characters.</p>
-                                <a class="tool-link" href="https://www.maxon.net/en/zbrush" target="_blank"
-                                    rel="noopener noreferrer">Get ZBrush →</a>
                             </div>
-                        </div>
+                            <div class="resource-footer">
+                                <a href="https://www.maxon.net/en/zbrush" target="_blank" rel="noopener noreferrer" class="resource-link">Get ZBrush</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- 2D Art & Concept -->
+                <!-- 2D Art -->
                 <div class="tool-category">
-                    <h5>2D Art & Concept</h5>
-                    <div class="tool-grid">
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">KR</div>
-                            <div class="tool-info">
-                                <h6>Krita <span class="badge badge-free">Free</span></h6>
+                    <h4 class="asset-category-title">2D Art & Concept</h4>
+                    <div class="resource-grid">
+                        <!-- Krita -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">KR</div>
+                                    <h5 class="resource-title">Krita</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Best open-source digital painting. Powerful brush engine.</p>
-                                <a class="tool-link" href="https://krita.org/en/download/krita-desktop/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">IN</div>
-                            <div class="tool-info">
-                                <h6>Inkscape <span class="badge badge-free">Free</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://krita.org/en/download/krita-desktop/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
+
+                        <!-- Inkscape -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">IN</div>
+                                    <h5 class="resource-title">Inkscape</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Vector graphics for UI icons, logos, scalable assets.</p>
-                                <a class="tool-link" href="https://inkscape.org/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">PS</div>
-                            <div class="tool-info">
-                                <h6>Adobe Photoshop <span class="badge badge-paid">Sub</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://inkscape.org/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
+
+                        <!-- Photoshop -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">PS</div>
+                                    <h5 class="resource-title">Adobe Photoshop</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-paid">Sub</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Most versatile raster editor. Infinite plugins.</p>
-                                <a class="tool-link" href="https://www.adobe.com/products/photoshop.html"
-                                    target="_blank" rel="noopener noreferrer">Get Photoshop →</a>
                             </div>
-                        </div>
+                            <div class="resource-footer">
+                                <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer" class="resource-link">Get Photoshop</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- Pixel Art & 2D Animation -->
+                <!-- Pixel Art -->
                 <div class="tool-category">
-                    <h5>Pixel Art & 2D Animation</h5>
-                    <div class="tool-grid">
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">AS</div>
-                            <div class="tool-info">
-                                <h6>Aseprite <span class="badge badge-paid">$20</span></h6>
+                    <h4 class="asset-category-title">Pixel Art & 2D Animation</h4>
+                    <div class="resource-grid">
+                        <!-- Aseprite -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">AS</div>
+                                    <h5 class="resource-title">Aseprite</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-paid">$20</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>World's premiere pixel art tool. Timeline animation.</p>
-                                <a class="tool-link" href="https://store.steampowered.com/app/431730/Aseprite/"
-                                    target="_blank" rel="noopener noreferrer">Buy on Steam →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">SP</div>
-                            <div class="tool-info">
-                                <h6>Spine 2D <span class="badge badge-paid">Paid</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://store.steampowered.com/app/431730/Aseprite/" target="_blank" rel="noopener noreferrer" class="resource-link">Buy on Steam</a>
+                            </div>
+                        </article>
+
+                        <!-- Spine 2D -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">SP</div>
+                                    <h5 class="resource-title">Spine 2D</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-paid">Paid</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Industry standard 2D skeletal animation.</p>
-                                <a class="tool-link" href="http://esotericsoftware.com/" target="_blank"
-                                    rel="noopener noreferrer">Get Spine →</a>
                             </div>
-                        </div>
+                            <div class="resource-footer">
+                                <a href="http://esotericsoftware.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Get Spine</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- Texturing & Materials -->
+                <!-- Texturing -->
                 <div class="tool-category">
-                    <h5>Texturing & Materials</h5>
-                    <div class="tool-grid">
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">MM</div>
-                            <div class="tool-info">
-                                <h6>Material Maker <span class="badge badge-free">Free</span></h6>
+                    <h4 class="asset-category-title">Texturing & Materials</h4>
+                    <div class="resource-grid">
+                        <!-- Material Maker -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">MM</div>
+                                    <h5 class="resource-title">Material Maker</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Procedural texture generation. Node-based workflow.</p>
-                                <a class="tool-link" href="https://www.materialmaker.org/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">S3</div>
-                            <div class="tool-info">
-                                <h6>Substance 3D <span class="badge badge-paid">Sub</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://www.materialmaker.org/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
+
+                        <!-- Substance 3D -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">S3</div>
+                                    <h5 class="resource-title">Substance 3D</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-paid">Sub</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>"Photoshop for 3D models." Paint onto meshes.</p>
-                                <a class="tool-link" href="https://www.adobe.com/products/substance3d-painter.html"
-                                    target="_blank" rel="noopener noreferrer">Get Substance →</a>
                             </div>
-                        </div>
+                            <div class="resource-footer">
+                                <a href="https://www.adobe.com/products/substance3d-painter.html" target="_blank" rel="noopener noreferrer" class="resource-link">Get Substance</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
-                <!-- UI & Experience Design -->
+                <!-- UI & Experience -->
                 <div class="tool-category">
-                    <h5>UI & Experience Design</h5>
-                    <div class="tool-grid">
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">FG</div>
-                            <div class="tool-info">
-                                <h6>Figma <span class="badge badge-free">Free Tier</span></h6>
-                                <p>Industry standard UI/UX prototyping.</p>
-                                <a class="tool-link" href="https://www.figma.com/" target="_blank"
-                                    rel="noopener noreferrer">Try Figma →</a>
+                    <h4 class="asset-category-title">UI & Experience Design</h4>
+                    <div class="resource-grid">
+                        <!-- Figma -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">FG</div>
+                                    <h5 class="resource-title">Figma</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free Tier</span>
+                                </div>
                             </div>
-                        </div>
+                            <div class="resource-description">
+                                <p>Industry standard UI/UX prototyping.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Try Figma</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
                 <!-- Level Design -->
                 <div class="tool-category">
-                    <h5>Level Design</h5>
-                    <div class="tool-grid">
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">LD</div>
-                            <div class="tool-info">
-                                <h6>LDtk <span class="badge badge-free">Free</span></h6>
+                    <h4 class="asset-category-title">Level Design</h4>
+                    <div class="resource-grid">
+                        <!-- LDtk -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">LD</div>
+                                    <h5 class="resource-title">LDtk</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Modern 2D level editor by Dead Cells developer.</p>
-                                <a class="tool-link" href="https://ldtk.io/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">TL</div>
-                            <div class="tool-info">
-                                <h6>Tiled <span class="badge badge-free">Free</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://ldtk.io/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
+
+                        <!-- Tiled -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">TL</div>
+                                    <h5 class="resource-title">Tiled</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Generic tile map editor. Orthogonal, isometric, hex.</p>
-                                <a class="tool-link" href="https://www.mapeditor.org/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
+                            <div class="resource-footer">
+                                <a href="https://www.mapeditor.org/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
                 <!-- Audio & Animation -->
                 <div class="tool-category">
-                    <h5>Audio & Animation</h5>
-                    <div class="tool-grid">
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">AU</div>
-                            <div class="tool-info">
-                                <h6>Audacity <span class="badge badge-free">Free</span></h6>
+                    <h4 class="asset-category-title">Audio & Animation</h4>
+                    <div class="resource-grid">
+                        <!-- Audacity -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">AU</div>
+                                    <h5 class="resource-title">Audacity</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Essential audio editing. Cut SFX, remove noise.</p>
-                                <a class="tool-link" href="https://www.audacityteam.org/download/" target="_blank"
-                                    rel="noopener noreferrer">Download →</a>
                             </div>
-                        </div>
-                        <div class="tool-card-compact">
-                            <div class="tool-logo">MX</div>
-                            <div class="tool-info">
-                                <h6>Mixamo <span class="badge badge-free">Free</span></h6>
+                            <div class="resource-footer">
+                                <a href="https://www.audacityteam.org/download/" target="_blank" rel="noopener noreferrer" class="resource-link">Download</a>
+                            </div>
+                        </article>
+
+                        <!-- Mixamo -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <div class="resource-logo">MX</div>
+                                    <h5 class="resource-title">Mixamo</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-free">Free</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
                                 <p>Instant character rigging + 2,500 animations.</p>
-                                <a class="tool-link" href="https://www.mixamo.com/" target="_blank"
-                                    rel="noopener noreferrer">Use Mixamo →</a>
                             </div>
-                        </div>
+                            <div class="resource-footer">
+                                <a href="https://www.mixamo.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Use Mixamo</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -425,181 +649,260 @@
                 <!-- 2D & UI Art -->
                 <div class="asset-category">
                     <h4 class="asset-category-title">2D & UI Art</h4>
-                    <div class="asset-grid">
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://www.kenney.nl/assets" target="_blank"
-                                        rel="noopener noreferrer">Kenney.nl</a></h5>
-                                <span class="badge-cc0">CC0 Public Domain</span>
+                    <div class="resource-grid">
+                        <!-- Kenney -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Kenney.nl</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-cc0">CC0 Public Domain</span>
+                                </div>
                             </div>
-                            <p class="asset-best-for">Best For: Prototyping, Game Jams, UI icons</p>
-                            <p class="asset-description">Industry standard for placeholder art. Thousands of consistent,
-                                modular 2D sprites, 3D models, and UI elements.</p>
-                            <a href="https://www.kenney.nl/assets" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Assets</a>
-                        </div>
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://opengameart.org/" target="_blank"
-                                        rel="noopener noreferrer">OpenGameArt.org</a></h5>
-                                <span class="badge-mixed">Mixed Licenses</span>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Prototyping, Game Jams, UI icons</p>
+                                <p>Industry standard for placeholder art. Thousands of consistent, modular 2D sprites, 3D models, and UI elements.</p>
                             </div>
-                            <p class="asset-best-for">Best For: Obscure 2D sprites, tilesets</p>
-                            <p class="asset-description">Massive community database. Quality varies—filter carefully and
-                                check each file's license.</p>
-                            <a href="https://opengameart.org/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Library</a>
-                        </div>
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://game-icons.net/" target="_blank"
-                                        rel="noopener noreferrer">Game-Icons.net</a></h5>
-                                <span class="badge-attribution">CC-BY 3.0</span>
+                            <div class="resource-footer">
+                                <a href="https://www.kenney.nl/assets" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Assets</a>
                             </div>
-                            <p class="asset-best-for">Best For: Skill trees, inventory icons, UI placeholders</p>
-                            <p class="asset-description">4,000+ clean SVG/PNG icons. Essential for RPGs and strategy
-                                games.</p>
-                            <a href="https://game-icons.net/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Icons</a>
-                        </div>
+                        </article>
+
+                        <!-- OpenGameArt -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">OpenGameArt.org</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-mixed">Mixed Licenses</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Obscure 2D sprites, tilesets</p>
+                                <p>Massive community database. Quality varies—filter carefully and check each file's license.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://opengameart.org/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Library</a>
+                            </div>
+                        </article>
+
+                        <!-- Game-Icons -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Game-Icons.net</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-attribution">CC-BY 3.0</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Skill trees, inventory icons, UI placeholders</p>
+                                <p>4,000+ clean SVG/PNG icons. Essential for RPGs and strategy games.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://game-icons.net/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Icons</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
                 <!-- 3D & Environment -->
                 <div class="asset-category">
                     <h4 class="asset-category-title">3D & Environment</h4>
-                    <div class="asset-grid">
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://polyhaven.com/" target="_blank" rel="noopener noreferrer">Poly
-                                        Haven</a></h5>
-                                <span class="badge-cc0">CC0 Public Domain</span>
+                    <div class="resource-grid">
+                        <!-- Poly Haven -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Poly Haven</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-cc0">CC0 Public Domain</span>
+                                </div>
                             </div>
-                            <p class="asset-best-for">Best For: Photorealistic environments</p>
-                            <p class="asset-description">High-quality HDRIs, PBR textures, and 3D props. No login
-                                required.</p>
-                            <a href="https://polyhaven.com/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Assets</a>
-                        </div>
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://ambientcg.com/" target="_blank"
-                                        rel="noopener noreferrer">AmbientCG</a></h5>
-                                <span class="badge-cc0">CC0 Public Domain</span>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Photorealistic environments</p>
+                                <p>High-quality HDRIs, PBR textures, and 3D props. No login required.</p>
                             </div>
-                            <p class="asset-best-for">Best For: Seamless PBR terrain and wall textures</p>
-                            <p class="asset-description">Massive library of scanned materials up to 8K resolution. Often
-                                better than paid alternatives for generic surfaces.</p>
-                            <a href="https://ambientcg.com/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Textures</a>
-                        </div>
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://www.fab.com/" target="_blank" rel="noopener noreferrer">Quixel
-                                        Megascans (Fab)</a></h5>
-                                <span class="badge-restricted">UE-Only License</span>
+                            <div class="resource-footer">
+                                <a href="https://polyhaven.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Assets</a>
                             </div>
-                            <p class="asset-best-for">Best For: AAA-quality photorealism</p>
-                            <p class="asset-description">Highest fidelity photogrammetry scans in the industry.</p>
-                            <div class="asset-warning"><strong>Unreal Engine only</strong> under free license. Paid
-                                license required for Unity, Godot, or other engines.</div>
-                            <a href="https://www.fab.com/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Megascans</a>
-                        </div>
+                        </article>
+
+                        <!-- AmbientCG -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">AmbientCG</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-cc0">CC0 Public Domain</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Seamless PBR terrain and wall textures</p>
+                                <p>Massive library of scanned materials up to 8K resolution. Often better than paid alternatives for generic surfaces.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://ambientcg.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Textures</a>
+                            </div>
+                        </article>
+
+                        <!-- Quixel -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Quixel Megascans (Fab)</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-restricted">UE-Only License</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: AAA-quality photorealism</p>
+                                <p>Highest fidelity photogrammetry scans in the industry.</p>
+                                <div class="resource-warning"><strong>Unreal Engine only</strong> under free license. Paid license required for Unity, Godot, or other engines.</div>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://www.fab.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Megascans</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
                 <!-- Audio -->
                 <div class="asset-category">
                     <h4 class="asset-category-title">Audio</h4>
-                    <div class="asset-grid">
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://sonniss.com/gameaudiogdc" target="_blank"
-                                        rel="noopener noreferrer">Sonniss GDC Bundles</a></h5>
-                                <span class="badge-cc0">Royalty-Free</span>
+                    <div class="resource-grid">
+                        <!-- Sonniss -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Sonniss GDC Bundles</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-cc0">Royalty-Free</span>
+                                </div>
                             </div>
-                            <p class="asset-best-for">Best For: Commercial-quality sound effects</p>
-                            <p class="asset-description">Every year at GDC, Sonniss releases 20GB+ of professional
-                                sounds. No attribution required.</p>
-                            <a href="https://sonniss.com/gameaudiogdc" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Get Free Bundles</a>
-                        </div>
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://freesound.org/" target="_blank"
-                                        rel="noopener noreferrer">Freesound.org</a></h5>
-                                <span class="badge-mixed">Mixed Licenses</span>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Commercial-quality sound effects</p>
+                                <p>Every year at GDC, Sonniss releases 20GB+ of professional sounds. No attribution required.</p>
                             </div>
-                            <p class="asset-best-for">Best For: Raw foley and experimental sounds</p>
-                            <p class="asset-description">Community uploaded. Quality is inconsistent; often requires
-                                cleanup in a DAW. Watch for "Non-Commercial" tags.</p>
-                            <a href="https://freesound.org/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Sounds</a>
-                        </div>
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://incompetech.com/music/royalty-free/" target="_blank"
-                                        rel="noopener noreferrer">Incompetech</a></h5>
-                                <span class="badge-attribution">CC-BY 4.0</span>
+                            <div class="resource-footer">
+                                <a href="https://sonniss.com/gameaudiogdc" target="_blank" rel="noopener noreferrer" class="resource-link">Get Free Bundles</a>
                             </div>
-                            <p class="asset-best-for">Best For: Background music loops</p>
-                            <p class="asset-description">Kevin MacLeod's extensive library. Among the most recognized
-                                royalty-free music online.</p>
-                            <a href="https://incompetech.com/music/royalty-free/" target="_blank"
-                                rel="noopener noreferrer" class="asset-link">Browse Music</a>
-                        </div>
+                        </article>
+
+                        <!-- Freesound -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Freesound.org</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-mixed">Mixed Licenses</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Raw foley and experimental sounds</p>
+                                <p>Community uploaded. Quality is inconsistent; often requires cleanup in a DAW. Watch for "Non-Commercial" tags.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://freesound.org/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Sounds</a>
+                            </div>
+                        </article>
+
+                        <!-- Incompetech -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Incompetech</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-attribution">CC-BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Background music loops</p>
+                                <p>Kevin MacLeod's extensive library. Among the most recognized royalty-free music online.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Music</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
                 <!-- Typography -->
                 <div class="asset-category">
                     <h4 class="asset-category-title">Typography</h4>
-                    <div class="asset-grid">
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google
-                                        Fonts</a></h5>
-                                <span class="badge-cc0">SIL Open Font License</span>
+                    <div class="resource-grid">
+                        <!-- Google Fonts -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Google Fonts</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-cc0">SIL Open Font License</span>
+                                </div>
                             </div>
-                            <p class="asset-best-for">Best For: UI text, menus, and HUDs</p>
-                            <p class="asset-description">Huge library of web-ready fonts. Safe for commercial games.</p>
-                            <div class="asset-note"><strong>Dev Note:</strong> Download .ttf or .otf files for embedding
-                                in Unity/Godot. Do not use CSS links in game engines.</div>
-                            <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Fonts</a>
-                        </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: UI text, menus, and HUDs</p>
+                                <p>Huge library of web-ready fonts. Safe for commercial games.</p>
+                                <div class="asset-note"><strong>Dev Note:</strong> Download .ttf or .otf files for embedding in Unity/Godot. Do not use CSS links in game engines.</div>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Fonts</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
                 <!-- VFX & Tech Art -->
                 <div class="asset-category">
                     <h4 class="asset-category-title">VFX & Tech Art</h4>
-                    <div class="asset-grid">
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://godotshaders.com/" target="_blank" rel="noopener noreferrer">Godot
-                                        Shaders</a></h5>
-                                <span class="badge-cc0">MIT / CC0</span>
+                    <div class="resource-grid">
+                        <!-- Godot Shaders -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">Godot Shaders</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-cc0">MIT / CC0</span>
+                                </div>
                             </div>
-                            <p class="asset-best-for">Best For: 2D/3D shaders for Godot Engine</p>
-                            <p class="asset-description">Copy-paste shader code for water, fire, distortion, and
-                                dissolve effects.</p>
-                            <a href="https://godotshaders.com/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Browse Shaders</a>
-                        </div>
-                        <div class="asset-card">
-                            <div class="asset-card-header">
-                                <h5><a href="https://realtimevfx.com/" target="_blank"
-                                        rel="noopener noreferrer">RealTimeVFX.com</a></h5>
-                                <span class="badge-mixed">Forum</span>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: 2D/3D shaders for Godot Engine</p>
+                                <p>Copy-paste shader code for water, fire, distortion, and dissolve effects.</p>
                             </div>
-                            <p class="asset-best-for">Best For: Learning VFX techniques</p>
-                            <p class="asset-description">Not an asset store—this is where professional VFX artists share
-                                breakdowns for explosions, trails, and magic effects.</p>
-                            <a href="https://realtimevfx.com/" target="_blank" rel="noopener noreferrer"
-                                class="asset-link">Visit Forum</a>
-                        </div>
+                            <div class="resource-footer">
+                                <a href="https://godotshaders.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Browse Shaders</a>
+                            </div>
+                        </article>
+
+                        <!-- RealTimeVFX -->
+                        <article class="resource-card">
+                            <div class="resource-header">
+                                <div class="resource-title-group">
+                                    <h5 class="resource-title">RealTimeVFX.com</h5>
+                                </div>
+                                <div class="resource-badge-container">
+                                    <span class="badge badge-mixed">Forum</span>
+                                </div>
+                            </div>
+                            <div class="resource-description">
+                                <p class="resource-meta">Best For: Learning VFX techniques</p>
+                                <p>Not an asset store—this is where professional VFX artists share breakdowns for explosions, trails, and magic effects.</p>
+                            </div>
+                            <div class="resource-footer">
+                                <a href="https://realtimevfx.com/" target="_blank" rel="noopener noreferrer" class="resource-link">Visit Forum</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
 
@@ -622,8 +925,7 @@
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2026 Game Creators Space. All rights reserved. <br>
-                Made with ❤️ for aspiring game developers.
+                &copy; 2026 Game Creators Space. All rights reserved.
             </div>
         </div>
     </footer>
