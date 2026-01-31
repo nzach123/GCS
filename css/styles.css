@@ -232,6 +232,17 @@ a {
     gap: 1.5rem;
 }
 
+.hero-quote {
+    color: var(--color-white);
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 2rem;
+    opacity: 0.9;
+    max-width: 500px;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1rem;
+}
+
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -469,6 +480,14 @@ footer {
     color: var(--color-white);
     text-align: center;
     padding: 1rem;
+}
+
+.guide-hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
 }
 
 /* Quote Section */
@@ -802,7 +821,151 @@ footer {
     text-decoration: underline;
 }
 
-/* Assets */
+/* Assets - Restructured Section */
+.asset-category {
+    margin-bottom: 2.5rem;
+}
+
+.asset-category:last-child {
+    margin-bottom: 0;
+}
+
+.asset-category-title {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.asset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.asset-card {
+    background: var(--color-white);
+    padding: 1.25rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.asset-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.asset-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.asset-card h5 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.asset-card h5 a {
+    color: var(--color-black);
+    transition: color 0.2s;
+}
+
+.asset-card h5 a:hover {
+    color: var(--color-primary);
+}
+
+/* License Badges - Color Coded */
+.badge-cc0 {
+    background: #d4edda;
+    color: #155724;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-attribution {
+    background: #fff3cd;
+    color: #856404;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-restricted {
+    background: #f8d7da;
+    color: #721c24;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-mixed {
+    background: #e2e3e5;
+    color: #383d41;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.asset-best-for {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+}
+
+.asset-description {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.asset-warning {
+    background: #fff3cd;
+    border-left: 3px solid #ffc107;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    color: #856404;
+    margin-bottom: 0.75rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.asset-note {
+    background: #d1ecf1;
+    border-left: 3px solid #17a2b8;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    color: #0c5460;
+    margin-bottom: 0.75rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.asset-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.asset-link:hover {
+    text-decoration: underline;
+}
+
+/* Legacy asset-source support */
 .asset-source {
     background: var(--color-white);
     padding: 2rem;
@@ -832,6 +995,17 @@ footer {
     font-weight: bold;
     border: 1px solid #ccc;
     white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .asset-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .asset-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 /* Finale */
@@ -996,7 +1170,305 @@ footer {
     border-radius: 0 4px 4px 0;
 }
 
-/* Non-Programmer Note */
+/* ==========================================================================
+   Redesigned Engine Cards Section
+   ========================================================================== */
+
+/* Engine Grid - 3-column layout */
+.engine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    .engine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .engine-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Engine Card - Standardized structure */
+.engine-card {
+    background: var(--color-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.engine-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Engine Card Image - Logo Display */
+.engine-card-image {
+    aspect-ratio: 16 / 9;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.engine-card-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Engine Card Content */
+.engine-card-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.engine-card-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.engine-card-content h4 a {
+    color: var(--color-black);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.engine-card-content h4 a:hover {
+    color: var(--color-primary);
+}
+
+/* Engine Best For - Highlight */
+.engine-best-for {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+/* Engine Description */
+.engine-description {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Engine Focus - Our Team's Focus */
+.engine-focus {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Engine Specs Table - Standardized for horizontal alignment */
+.engine-specs {
+    border-top: 1px solid #e0e0e0;
+    margin-bottom: 1.5rem;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+}
+
+.spec-row:nth-child(odd) {
+    background: var(--color-gray-light);
+}
+
+.spec-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+}
+
+.spec-value {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Engine Actions - CTA Buttons */
+.engine-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1rem;
+}
+
+.engine-actions .btn-primary {
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.engine-docs-link {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: text-decoration 0.2s ease;
+}
+
+.engine-docs-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Rapid Prototyping & Retro Systems Section
+   ========================================================================== */
+
+.rapid-prototyping-section {
+    background: #f5f5f5;
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+/* Two-column layout for rapid prototyping */
+.rapid-prototyping-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.rapid-prototyping-content {
+    flex: 1;
+}
+
+.rapid-prototyping-image {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.rapid-prototyping-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.rapid-prototyping-image .img-placeholder {
+    width: 100%;
+    min-height: 250px;
+    background: #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .rapid-prototyping-layout {
+        flex-direction: column;
+    }
+
+    .rapid-prototyping-image .img-placeholder {
+        min-height: 200px;
+    }
+}
+
+.rapid-prototyping-section h4 {
+    font-size: 1.5rem;
+    color: var(--color-black);
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+.rapid-prototyping-section p {
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.rapid-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 900px) {
+    .rapid-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .rapid-tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rapid-tool-card {
+    background: var(--color-white);
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.rapid-tool-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.rapid-tool-card strong {
+    font-size: 1.1rem;
+    color: var(--color-black);
+}
+
+.rapid-tool-card span {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Rapid Tools List - Simple bullet format (matches markdown) */
+.rapid-tools-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.rapid-tools-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.rapid-tools-list a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.rapid-tools-list a:hover {
+    text-decoration: underline;
+}
+
+/* Legacy support - keep old styles but hidden */
 .non-programmer-note {
     background: var(--color-white);
     padding: 2rem;
@@ -1284,4 +1756,179 @@ footer {
     .roadmap-day p {
         font-size: 1rem;
     }
+
+    .tool-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommended-stack {
+        padding: 1rem 1.25rem;
+    }
+}
+
+/* ==========================================================================
+   Other Programs Section - Compact Option B Layout
+   ========================================================================== */
+
+/* Tool Category - Minimal styling */
+.tool-category {
+    margin-bottom: 1.75rem;
+}
+
+.tool-category:last-child {
+    margin-bottom: 0;
+}
+
+.tool-category>h5 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+/* Tool Grid - Two columns */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .tool-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Compact Tool Card - Option B */
+.tool-card-compact {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+}
+
+.tool-card-compact:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 119, 200, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tool-card-compact {
+        transition: none;
+    }
+}
+
+/* Logo Placeholder */
+.tool-logo {
+    width: 32px;
+    height: 32px;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+}
+
+/* Tool Info */
+.tool-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tool-info h6 {
+    font-size: 0.95rem;
+    margin: 0 0 0.125rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    line-height: 1.3;
+}
+
+.tool-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.35;
+}
+
+/* Inline link styling */
+.tool-info .tool-link {
+    font-size: 0.75rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-top: 0.25rem;
+    display: inline-block;
+}
+
+.tool-info .tool-link:hover {
+    text-decoration: underline;
+}
+
+/* Compact Badges */
+.badge {
+    font-size: 0.65rem;
+    padding: 0.125rem 0.35rem;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    vertical-align: middle;
+}
+
+.badge-free {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-paid {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.badge-pro {
+    background: #e7d4ff;
+    color: #5a3d7a;
+}
+
+.badge-essential {
+    background: #cce5ff;
+    color: #004085;
+}
+
+/* Pro Alternatives - Subtle styling */
+.pro-alternatives {
+    margin-top: 0.5rem;
+}
+
+.pro-alternatives-label {
+    font-size: 0.7rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.pro-alternatives .tool-card-compact {
+    background: #fafafa;
+    border-color: #eee;
+}
+
+.pro-alternatives .tool-card-compact:hover {
+    background: #fff;
 }
