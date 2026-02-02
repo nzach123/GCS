@@ -324,12 +324,14 @@ a {
     background: var(--color-white);
     padding: 2rem;
     border-radius: 8px;
+    border: 1px solid transparent;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
 }
 
 .feature-card h3 {
@@ -575,14 +577,14 @@ footer {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
     display: flex;
     flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
 }
 
 .card-image {
@@ -993,12 +995,27 @@ footer {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    height: 100%;
 }
 
 .engine-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-primary);
+    background: #f8fafc;
+    box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+/* Clickable engine card wrapper */
+a.engine-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+a.engine-card-link:focus-visible .engine-card {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 /* Engine Card Image - Logo Display */
@@ -1033,11 +1050,6 @@ footer {
 .engine-card-content h4 a {
     color: var(--color-black);
     text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.engine-card-content h4 a:hover {
-    color: var(--color-primary);
 }
 
 /* Engine Best For - Highlight */
@@ -1192,12 +1204,13 @@ footer {
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
-    transition: transform 0.2s, background 0.2s;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .jam-card:hover {
-    transform: translateY(-5px);
+    border-color: var(--color-accent);
     background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px var(--color-accent);
 }
 
 .jam-card h4 {
