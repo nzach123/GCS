@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Bebas+Neue&display=swap"
         rel="stylesheet">
+    <!-- Preload hero images for LCP optimization -->
+    <link rel="preload" as="image" href="assets/photos/Showcase/ctr-alt-deal-01.webp">
+    <link rel="preload" as="image" href="assets/photos/Showcase/Midnight-Mash01.webp">
+    <link rel="preload" as="image" href="assets/photos/Showcase/Dead-Air.webp">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/showcase.css">
 </head>
@@ -29,7 +33,7 @@
     </header>
 
     <main>
-        <section class="showcase-hero">
+        <section class="showcase-hero" aria-live="polite">
             <!-- Hidden Radios for State Management -->
             <input type="radio" name="hero-slider" id="hero-1" class="hero-radio" checked>
             <input type="radio" name="hero-slider" id="hero-2" class="hero-radio">
@@ -38,13 +42,15 @@
             <div class="hero-content-wrapper">
                 <!-- 70% Visual Area -->
                 <div class="hero-visual-area">
-                    <!-- Placeholder Images (Using gradients/colors for now to represent games) -->
-                    <img src="https://placehold.co/1200x800/2B9AE4/FFFFFF?text=Featured+Game+1" alt="Game 1 Screenshot"
-                        class="hero-slide-image slide-img-1">
-                    <img src="https://placehold.co/1200x800/FFC700/000000?text=Featured+Game+2" alt="Game 2 Screenshot"
-                        class="hero-slide-image slide-img-2">
-                    <img src="https://placehold.co/1200x800/8e44ad/FFFFFF?text=Featured+Game+3" alt="Game 3 Screenshot"
-                        class="hero-slide-image slide-img-3">
+                    <img src="assets/photos/Showcase/ctr-alt-deal-01.webp" alt="Ctrl Alt Deal Screenshot"
+                        class="hero-slide-image slide-img-1"
+                        onerror="this.src='https://placehold.co/1200x800/1a1a1a/ffffff?text=Image+Not+Found'">
+                    <img src="assets/photos/Showcase/Midnight-Mash01.webp" alt="Midnight Mash Screenshot"
+                        class="hero-slide-image slide-img-2"
+                        onerror="this.src='https://placehold.co/1200x800/1a1a1a/ffffff?text=Image+Not+Found'">
+                    <img src="assets/photos/Showcase/Dead-Air.webp" alt="Dead Air Screenshot"
+                        class="hero-slide-image slide-img-3"
+                        onerror="this.src='https://placehold.co/1200x800/1a1a1a/ffffff?text=Image+Not+Found'">
                 </div>
 
                 <!-- 30% Info Area -->
@@ -52,9 +58,10 @@
 
                     <!-- Slide 1 Info -->
                     <div class="hero-slide-info slide-info-1">
-                        <h1 class="hero-game-title">COSMIC DRIFTER</h1>
-                        <p class="hero-game-desc">Navigate through the asteroid fields in this physics-based space
-                            racer. Created during the 2024 Global Game Jam.</p>
+                        <h1 class="hero-game-title">CTRL ALT DEAL</h1>
+                        <p class="hero-author">by makachu</p>
+                        <p class="hero-game-desc">With your superior intelligence and sneakiness, escape from this
+                            heartless megacorp! Spy on humans, offer deals, and negotiate your way to freedom.</p>
 
                         <div class="hero-nav">
                             <label for="hero-3" class="nav-label">&lt; PREV</label>
@@ -64,9 +71,10 @@
 
                     <!-- Slide 2 Info -->
                     <div class="hero-slide-info slide-info-2">
-                        <h1 class="hero-game-title">NEON DUNGEON</h1>
-                        <p class="hero-game-desc">A roguelike crawler featuring procedural generation and dynamic
-                            lighting. Best Student Project 2023.</p>
+                        <h1 class="hero-game-title">MIDNIGHT MASH</h1>
+                        <p class="hero-author">by Alex Twin</p>
+                        <p class="hero-game-desc">A point and click adventure where you control Axel "Axe" Firefist, an
+                            eager warrior ready to become the world's greatest fighter.</p>
 
                         <div class="hero-nav">
                             <label for="hero-1" class="nav-label">&lt; PREV</label>
@@ -76,9 +84,10 @@
 
                     <!-- Slide 3 Info -->
                     <div class="hero-slide-info slide-info-3">
-                        <h1 class="hero-game-title">PIXEL FARM</h1>
-                        <p class="hero-game-desc">Relax and grow your own virtual garden. A chill simulation game with
-                            cozy vibes.</p>
+                        <h1 class="hero-game-title">DEAD AIR</h1>
+                        <p class="hero-author">by Im_fushy</p>
+                        <p class="hero-game-desc">Isolated in a forgotten Canadian forest, unravel the truth behind
+                            E.C.H.O. Track down cassettes, solve puzzles, and evade lurking creatures.</p>
 
                         <div class="hero-nav">
                             <label for="hero-2" class="nav-label">&lt; PREV</label>
@@ -90,112 +99,195 @@
             </div>
         </section>
 
-        <!-- Category: Game Jam 2024 -->
+        <!-- Category: All Games -->
         <section class="category-section">
-            <h2 class="category-title">GAME JAM 2024</h2>
-            <div class="shelf-container">
+            <h2 class="category-title">ALL GAMES</h2>
+            <div class="shelf-container" id="games-shelf">
 
-                <!-- Card 1 -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- Ctrl Alt Deal -->
+                <a href="https://store.steampowered.com/app/2146390/Ctrl_Alt_Deal/" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/2c3e50/ecf0f1?text=Gravity+Shift" alt="Gravity Shift"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/ctr-alt-deal-01.webp" alt="Ctrl Alt Deal" class="card-image"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Gravity Shift</div>
-                        <div class="card-meta">Platformer</div>
+                        <div class="card-title">Ctrl Alt Deal</div>
+                        <div class="card-author">by makachu</div>
+                        <div class="card-description">Spy on humans, offer them deals, and negotiate your way to freedom
+                            in a turn-based strategy game.</div>
                     </div>
                 </a>
 
-                <!-- Card 2 -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- Midnight Mash -->
+                <a href="https://rogapol-interactive.itch.io/midnight-mash" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/c0392b/ecf0f1?text=Mars+Rover" alt="Mars Rover"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/Midnight-Mash01.webp" alt="Midnight Mash" class="card-image"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Mars Rover</div>
-                        <div class="card-meta">Simulation</div>
+                        <div class="card-title">Midnight Mash</div>
+                        <div class="card-author">by Alex Twin</div>
+                        <div class="card-description">A point and click adventure where you become the world's greatest
+                            fighter.</div>
                     </div>
                 </a>
 
-                <!-- Card 3 -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- Dead Air -->
+                <a href="https://store.steampowered.com/app/3382890/Dead_Air/" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/27ae60/ecf0f1?text=Forest+Echo" alt="Forest Echo"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/Dead-Air.webp" alt="Dead Air" class="card-image" loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Forest Echo</div>
-                        <div class="card-meta">Adventure</div>
+                        <div class="card-title">Dead Air</div>
+                        <div class="card-author">by Im_fushy</div>
+                        <div class="card-description">Unravel the truth in a forgotten Canadian forest. Track down
+                            cassettes and evade creatures.</div>
                     </div>
                 </a>
 
-                <!-- Card 4 -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- Monastery of One -->
+                <a href="https://www.newgrounds.com/portal/view/1003446" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/8e44ad/ecf0f1?text=Neon+Beat" alt="Neon Beat"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/Monastery-Of-One.webp" alt="Monastery of One"
+                            class="card-image" loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Neon Beat</div>
-                        <div class="card-meta">Rhythm</div>
+                        <div class="card-title">Monastery of One</div>
+                        <div class="card-author">by Junexela</div>
+                        <div class="card-description">A short psychological game. Can you get all 3 endings?</div>
                     </div>
                 </a>
 
-                <!-- Card 5 (Scroll demo) -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- Chapter 1: SCP 087 -->
+                <a href="https://voyagerthedragon.itch.io/scp-087" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/d35400/ecf0f1?text=Cyber+Slice" alt="Cyber Slice"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/Chapter1-SCP087.webp" alt="Chapter 1: SCP 087"
+                            class="card-image" loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Cyber Slice</div>
-                        <div class="card-meta">Action</div>
+                        <div class="card-title">Chapter 1: SCP 087</div>
+                        <div class="card-author">by Junexela</div>
+                        <div class="card-description">Survive your expedition into SCP 087 and uncover every ending.
+                        </div>
                     </div>
                 </a>
 
-            </div>
-        </section>
-
-        <!-- Category: Student Projects -->
-        <section class="category-section">
-            <h2 class="category-title">STUDENT PROJECTS</h2>
-            <div class="shelf-container">
-
-                <!-- Card 1 -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- This Was A Nice Neighborhood -->
+                <a href="https://itch.io/jam/godot-wild-jam-82/rate/3652852" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/16a085/ecf0f1?text=Project+Alpha" alt="Project Alpha"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/ThisWasANiceNeighborhood.webp"
+                            alt="This Was A Nice Neighborhood" class="card-image" loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Project Alpha</div>
-                        <div class="card-meta">RPG</div>
+                        <div class="card-title">This Was A Nice Neighborhood</div>
+                        <div class="card-author">by catboyjonah</div>
+                        <div class="card-description">Operate an orbital space station designed for controlled
+                            demolition.</div>
                     </div>
                 </a>
 
-                <!-- Card 2 -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- Septic -->
+                <a href="https://store.steampowered.com/app/3146010/Septic/" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/2980b9/ecf0f1?text=Deep+Sea" alt="Deep Sea"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/Septic-01.webp" alt="Septic" class="card-image" loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Deep Sea</div>
-                        <div class="card-meta">Horror</div>
+                        <div class="card-title">Septic</div>
+                        <div class="card-author">by Evanator</div>
+                        <div class="card-description">A gripping precision platformer in an underground sewer.</div>
                     </div>
                 </a>
 
-                <!-- Card 3 -->
-                <a href="https://itch.io" class="game-card" target="_blank">
+                <!-- Samurai Koi -->
+                <a href="https://demcknight.itch.io/koi-samurai" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
                     <div class="card-image-wrapper">
-                        <img src="https://placehold.co/600x338/f39c12/ecf0f1?text=Sandstorm" alt="Sandstorm"
-                            class="card-image">
+                        <img src="assets/photos/Showcase/Samuria-kio.webp" alt="Samurai Koi" class="card-image"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
                     </div>
                     <div class="card-info">
-                        <div class="card-title">Sandstorm</div>
-                        <div class="card-meta">Survival</div>
+                        <div class="card-title">Samurai Koi</div>
+                        <div class="card-author">by Sam</div>
+                        <div class="card-description">A 2D platformer where you spawn bubbles and launch from them.
+                            Become a dragon!</div>
+                    </div>
+                </a>
+
+                <!-- Midnight Echo -->
+                <a href="https://store.steampowered.com/app/3220530/Midnight_Echo/" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="card-image-wrapper">
+                        <img src="assets/photos/Showcase/Midnight-echo-01.webp" alt="Midnight Echo" class="card-image"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Midnight Echo</div>
+                        <div class="card-author">by Jack</div>
+                        <div class="card-description">First-person adventure/horror in a forest where no one returns.
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Under Promotion -->
+                <a href="https://samquist.itch.io/underpromotion" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="card-image-wrapper">
+                        <img src="assets/photos/Showcase/UnderPromotion-01.webp" alt="Under Promotion"
+                            class="card-image" loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Under Promotion</div>
+                        <div class="card-author">by Sam</div>
+                        <div class="card-description">Chess-inspired puzzle game. Winner of Outstanding Game Mechanics
+                            2023!</div>
+                    </div>
+                </a>
+
+                <!-- Candy Quest -->
+                <a href="https://maxbeforetheone.itch.io/candy-quest-demo-v3" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="card-image-wrapper">
+                        <img src="assets/photos/Showcase/CandyQuest01.webp" alt="Candy Quest" class="card-image"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Candy Quest</div>
+                        <div class="card-author">by MaxBeforeTheOne</div>
+                        <div class="card-description">Halloween-themed platformer for the Game Boy Color.</div>
+                    </div>
+                </a>
+
+                <!-- Root Scaler -->
+                <a href="https://globalgamejam.org/2023/games/root-scaler-5" class="game-card" target="_blank"
+                    rel="noopener noreferrer">
+                    <div class="card-image-wrapper">
+                        <img src="assets/photos/Showcase/rootscalar2.webp" alt="Root Scaler" class="card-image"
+                            loading="lazy"
+                            onerror="this.src='https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found'">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Root Scaler</div>
+                        <div class="card-author">by Angelo</div>
+                        <div class="card-description">Use grappling root systems to climb out of the pit and away from
+                            the lava!</div>
                     </div>
                 </a>
 
@@ -216,6 +308,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/showcase-rotation.js"></script>
 </body>
 
 </html>

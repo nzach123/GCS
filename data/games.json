@@ -1,0 +1,118 @@
+{
+  "games": [
+    {
+      "id": "ctrl-alt-deal",
+      "title": "Ctrl Alt Deal",
+      "author": "makachu",
+      "link": "https://store.steampowered.com/app/2146390/Ctrl_Alt_Deal/",
+      "description": "With your superior intelligence and sneakiness, you can find a way to escape from this heartless megacorp! Spy on humans, offer them deals, and negotiate your way to freedom in a turn-based strategy game of corporate dysfunction.",
+      "images": ["ctr-alt-deal-01.webp", "ctr-alt-deal-02.webp"],
+      "featured": true
+    },
+    {
+      "id": "midnight-mash",
+      "title": "Midnight Mash",
+      "author": "Alex Twin",
+      "link": "https://rogapol-interactive.itch.io/midnight-mash",
+      "description": "A point and click adventure game where you control the upcoming fighter Axel \"Axe\" Firefist, an eager warrior willing to do whatever it takes to become the world's greatest hand to hand fighter.",
+      "images": ["Midnight-Mash01.webp", "Midnight-Mash02.webp"],
+      "featured": true
+    },
+    {
+      "id": "dead-air",
+      "title": "Dead Air",
+      "author": "Im_fushy",
+      "link": "https://store.steampowered.com/app/3382890/Dead_Air/",
+      "description": "Isolated in a forgotten Canadian forest, you must unravel the truth behind E.C.H.O. Track down lost cassettes, solve cryptic puzzles, and evade the creatures lurking in the fog.",
+      "images": ["Dead-Air.webp"],
+      "featured": true
+    },
+    {
+      "id": "monastery-of-one",
+      "title": "Monastery of One",
+      "author": "Junexela",
+      "link": "https://www.newgrounds.com/portal/view/1003446",
+      "description": "A short psychological game made for the Newgrounds 2025 Halloween Contest. Can you get all 3 endings?",
+      "images": ["Monastery-Of-One.webp"],
+      "featured": false
+    },
+    {
+      "id": "chapter1-scp087",
+      "title": "Chapter 1: SCP 087",
+      "author": "Junexela",
+      "link": "https://voyagerthedragon.itch.io/scp-087",
+      "description": "Dr. Cantrell used to be a Level 4 researcher at the SCP Foundation. Now he has been demoted to D class. Find a way to survive your expedition into SCP 087.",
+      "images": ["Chapter1-SCP087.webp"],
+      "featured": false
+    },
+    {
+      "id": "this-was-a-nice-neighborhood",
+      "title": "This Was A Nice Neighborhood",
+      "author": "catboyjonah",
+      "link": "https://itch.io/jam/godot-wild-jam-82/rate/3652852",
+      "description": "Operate an orbital space station designed for controlled demolition with a variety of tools to ensure everything is up and running according to schedule.",
+      "images": ["ThisWasANiceNeighborhood.webp"],
+      "featured": false
+    },
+    {
+      "id": "septic",
+      "title": "Septic",
+      "author": "Evanator",
+      "link": "https://store.steampowered.com/app/3146010/Septic/",
+      "description": "A gripping precision platformer where you navigate an underground sewer, mastering challenging jumps and dealing with significant setbacks.",
+      "images": ["Septic-01.webp"],
+      "featured": false
+    },
+    {
+      "id": "koi-samurai",
+      "title": "Samurai Koi",
+      "author": "Sam",
+      "link": "https://demcknight.itch.io/koi-samurai",
+      "description": "A 2D platformer where you spawn bubbles and launch from them. Reach the waterfall and become a dragon!",
+      "images": ["Samuria-kio.webp"],
+      "featured": false
+    },
+    {
+      "id": "midnight-echo",
+      "title": "Midnight Echo",
+      "author": "Jack",
+      "link": "https://store.steampowered.com/app/3220530/Midnight_Echo/",
+      "description": "In this first-person adventure/horror game, step into a forest where no one ever returns. Explore its haunted paths and uncover dark secrets.",
+      "images": ["Midnight-echo-01.webp"],
+      "featured": false
+    },
+    {
+      "id": "under-promotion",
+      "title": "Under Promotion",
+      "author": "Sam",
+      "link": "https://samquist.itch.io/underpromotion",
+      "description": "A chess-inspired puzzle game made in RPG Maker! Transform into Knight, Bishop, and Rook to traverse tricky puzzles. Winner of Outstanding Game Mechanics 2023!",
+      "images": ["UnderPromotion-01.webp"],
+      "featured": false
+    },
+    {
+      "id": "candy-quest",
+      "title": "Candy Quest",
+      "author": "MaxBeforeTheOne",
+      "link": "https://maxbeforetheone.itch.io/candy-quest-demo-v3",
+      "description": "A Halloween-themed platformer for the Game Boy Color. The four Pumpkids set out on a quest to collect candy and light candles for their highness.",
+      "images": ["CandyQuest01.webp", "CandyQuest02.webp"],
+      "featured": false
+    },
+    {
+      "id": "root-scaler",
+      "title": "Root Scaler",
+      "author": "Angelo",
+      "link": "https://globalgamejam.org/2023/games/root-scaler-5",
+      "description": "Use your grappling root systems to climb out of the pit and away from the lava!",
+      "images": ["rootscalar2.webp"],
+      "featured": false
+    }
+  ],
+  "config": {
+    "imagePath": "assets/photos/Showcase/",
+    "fallbackImage": "https://placehold.co/600x338/1a1a1a/ffffff?text=Image+Not+Found",
+    "rotationInterval": 8000,
+    "featuredCount": 3
+  }
+}

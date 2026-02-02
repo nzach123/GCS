@@ -148,6 +148,13 @@ footer {
   color: #a3b3c5;
 }
 
+.hero-author {
+  font-size: 0.95rem;
+  color: var(--showcase-accent);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
 /* Navigation Controls (Prev/Next) */
 .hero-nav {
   display: flex;
@@ -276,6 +283,23 @@ footer {
 .card-meta {
   font-size: 0.9rem;
   color: #a3b3c5;
+}
+
+.card-author {
+  font-size: 0.85rem;
+  color: var(--showcase-accent);
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  color: #8899aa;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0.25rem;
 }
 
 /* ==========================================================================
