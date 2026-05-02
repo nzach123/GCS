@@ -265,6 +265,16 @@ a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 .meeting-info {
     font-size: 1.25rem;
     font-weight: 500;
@@ -487,9 +497,9 @@ footer {
 .guide-hero-img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
+    object-fit: contain;
+    transform: scale(1.15);
 }
 
 /* Quote Section */
