@@ -44,3 +44,9 @@ As a static website, this project does not require a build step.
 - `data/`: JSON data files.
 - `js/`: Client-side scripts.
 - `referance/`: Supplemental project documents (e.g., Excel sheets).
+
+## Deprecated / Old Pages
+- **DO NOT USE:** The following files in the `z_old/` directory are outdated and should be ignored:
+  - `z_old/getting-started.html`
+  - `z_old/showcase.html`
+
