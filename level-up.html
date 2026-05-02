@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Level Up — An annual game development conference hosted by Game Creators Space. Speaker events, game jams, and collaborative club space.">
+    <title>Level Up | Game Creators Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
+    <!-- Preload first carousel image for faster LCP -->
+    <link rel="preload" as="image" href="assets/photos/levelup/photos/DSC00448.webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/level-up.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo-link">
+            <img src="assets/gsc-logo-plain.png" alt="GCS Logo" class="header-logo">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="get-started.html">Get Started</a>
+            <a href="showcase.html">Showcase</a>
+            <a href="https://discord.gg/YpPJXkeW" class="btn-nav" target="_blank" rel="noopener noreferrer">Join Discord</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===== LEVEL UP HERO ===== -->
+        <section class="lu-hero" aria-label="Level Up conference hero">
+            <!-- Arrow pattern overlay (inherited via pseudo-element in CSS) -->
+
+            <div class="lu-hero__inner">
+
+                <!-- LEFT: Text Column -->
+                <div class="lu-hero__text">
+                    <p class="lu-hero__eyebrow">Annual Conference · Edmonton</p>
+                    <h1 class="lu-hero__headline">STOP PLAYING.<br>START BUILDING.</h1>
+                    <p class="lu-hero__body">
+                        Level Up brings together creators for workshops, networking, and celebration.
+                    </p>
+                    <ul class="lu-hero__features" aria-label="Conference highlights">
+                        <li>Speaker Events</li>
+                        <li>Game Jams</li>
+                        <li>Collaborative Club Space</li>
+                    </ul>
+                    <p class="lu-hero__tagline">Looking forward to seeing you next year!</p>
+                </div>
+
+                <!-- CENTER: Level Up Logo Badge -->
+                <div class="lu-hero__badge" aria-hidden="true">
+                    <img src="assets/photos/levelup/Level up logo.png" alt="Level Up Logo" class="lu-badge__img">
+                </div>
+
+                <!-- RIGHT: Photo Carousel -->
+                <div class="lu-carousel" role="region" aria-label="Level Up event photos">
+                    <div class="lu-carousel__track" id="luCarouselTrack">
+                        <div class="lu-carousel__slide">
+                            <img src="assets/photos/levelup/photos/DSC00448.webp" alt="Level Up event photo 1" loading="eager">
+                        </div>
+                        <div class="lu-carousel__slide">
+                            <img src="assets/photos/levelup/photos/DSC00453.webp" alt="Level Up event photo 2" loading="lazy">
+                        </div>
+                        <div class="lu-carousel__slide">
+                            <img src="assets/photos/levelup/photos/DSC00457.webp" alt="Level Up event photo 3" loading="lazy">
+                        </div>
+                        <div class="lu-carousel__slide">
+                            <img src="assets/photos/levelup/photos/DSC00463.webp" alt="Level Up event photo 4" loading="lazy">
+                        </div>
+                        <div class="lu-carousel__slide">
+                            <img src="assets/photos/levelup/photos/DSC00476.webp" alt="Level Up event photo 5" loading="lazy">
+                        </div>
+                        <div class="lu-carousel__slide">
+                            <img src="assets/photos/levelup/photos/DSC00480.webp" alt="Level Up event photo 6" loading="lazy">
+                        </div>
+                        <div class="lu-carousel__slide">
+                            <img src="assets/photos/levelup/photos/DSC00512.webp" alt="Level Up event photo 7" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="lu-carousel__btn lu-carousel__btn--prev" id="luPrev" aria-label="Previous slide">&#8249;</button>
+                    <button class="lu-carousel__btn lu-carousel__btn--next" id="luNext" aria-label="Next slide">&#8250;</button>
+                    <div class="lu-carousel__counter" id="luCounter" aria-live="polite">1 / 7</div>
+                </div>
+
+            </div><!-- /.lu-hero__inner -->
+
+            <!-- Bottom chevron band -->
+            <div class="lu-chevron-band" aria-hidden="true"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h2>GAME CREATORS SPACE</h2>
+                    <p class="meeting-detail">MON @ 12PM | WB314</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Game Creators Space. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/level-up.js"></script>
+</body>
+
+</html>
