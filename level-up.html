@@ -34,6 +34,39 @@
         <section class="lu-hero" aria-label="Level Up conference hero">
             <!-- Arrow pattern overlay (inherited via pseudo-element in CSS) -->
 
+            <!-- TOP: Photo Carousel (Full Bleed) -->
+            <div class="lu-carousel" role="region" aria-label="Level Up event photos">
+                <div class="lu-carousel__track" id="luCarouselTrack">
+                    <div class="lu-carousel__slide">
+                        <img src="assets/photos/levelup/photos/DSC00448.webp" alt="Level Up event photo 1" loading="eager">
+                    </div>
+                    <div class="lu-carousel__slide">
+                        <img src="assets/photos/levelup/photos/DSC00453.webp" alt="Level Up event photo 2" loading="lazy">
+                    </div>
+                    <div class="lu-carousel__slide">
+                        <img src="assets/photos/levelup/photos/DSC00457.webp" alt="Level Up event photo 3" loading="lazy">
+                    </div>
+                    <div class="lu-carousel__slide">
+                        <img src="assets/photos/levelup/photos/DSC00463.webp" alt="Level Up event photo 4" loading="lazy">
+                    </div>
+                    <div class="lu-carousel__slide">
+                        <img src="assets/photos/levelup/photos/DSC00476.webp" alt="Level Up event photo 5" loading="lazy">
+                    </div>
+                    <div class="lu-carousel__slide">
+                        <img src="assets/photos/levelup/photos/DSC00480.webp" alt="Level Up event photo 6" loading="lazy">
+                    </div>
+                    <div class="lu-carousel__slide">
+                        <img src="assets/photos/levelup/photos/DSC00512.webp" alt="Level Up event photo 7" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="lu-carousel__btn lu-carousel__btn--prev" id="luPrev" aria-label="Previous slide">&#8249;</button>
+                <button class="lu-carousel__btn lu-carousel__btn--next" id="luNext" aria-label="Next slide">&#8250;</button>
+                <div class="lu-carousel__counter" id="luCounter" aria-live="polite">1 / 7</div>
+            </div>
+
+            <!-- BOTTOM: Text and Logo -->
             <div class="lu-hero__inner">
 
                 <!-- LEFT: Text Column -->
@@ -51,41 +84,9 @@
                     <p class="lu-hero__tagline">Looking forward to seeing you next year!</p>
                 </div>
 
-                <!-- CENTER: Level Up Logo Badge -->
+                <!-- RIGHT: Level Up Logo Badge -->
                 <div class="lu-hero__badge" aria-hidden="true">
                     <img src="assets/photos/levelup/Level up logo.png" alt="Level Up Logo" class="lu-badge__img">
-                </div>
-
-                <!-- RIGHT: Photo Carousel -->
-                <div class="lu-carousel" role="region" aria-label="Level Up event photos">
-                    <div class="lu-carousel__track" id="luCarouselTrack">
-                        <div class="lu-carousel__slide">
-                            <img src="assets/photos/levelup/photos/DSC00448.webp" alt="Level Up event photo 1" loading="eager">
-                        </div>
-                        <div class="lu-carousel__slide">
-                            <img src="assets/photos/levelup/photos/DSC00453.webp" alt="Level Up event photo 2" loading="lazy">
-                        </div>
-                        <div class="lu-carousel__slide">
-                            <img src="assets/photos/levelup/photos/DSC00457.webp" alt="Level Up event photo 3" loading="lazy">
-                        </div>
-                        <div class="lu-carousel__slide">
-                            <img src="assets/photos/levelup/photos/DSC00463.webp" alt="Level Up event photo 4" loading="lazy">
-                        </div>
-                        <div class="lu-carousel__slide">
-                            <img src="assets/photos/levelup/photos/DSC00476.webp" alt="Level Up event photo 5" loading="lazy">
-                        </div>
-                        <div class="lu-carousel__slide">
-                            <img src="assets/photos/levelup/photos/DSC00480.webp" alt="Level Up event photo 6" loading="lazy">
-                        </div>
-                        <div class="lu-carousel__slide">
-                            <img src="assets/photos/levelup/photos/DSC00512.webp" alt="Level Up event photo 7" loading="lazy">
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <button class="lu-carousel__btn lu-carousel__btn--prev" id="luPrev" aria-label="Previous slide">&#8249;</button>
-                    <button class="lu-carousel__btn lu-carousel__btn--next" id="luNext" aria-label="Next slide">&#8250;</button>
-                    <div class="lu-carousel__counter" id="luCounter" aria-live="polite">1 / 7</div>
                 </div>
 
             </div><!-- /.lu-hero__inner -->
