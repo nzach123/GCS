@@ -1586,9 +1586,9 @@ a.engine-card-link:focus-visible .engine-card {
 }
 
 .badge-download {
-    background: var(--color-primary);
+    background: #005FA3;
     color: var(--color-white);
-    border-color: var(--color-primary);
+    border-color: #005FA3;
 }
 
 /* ==========================================================================
