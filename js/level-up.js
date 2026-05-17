@@ -12,6 +12,14 @@
 
     if (!track) return;
 
+    // Fisher–Yates shuffle of slide order on page load so visitors see a fresh sequence each visit
+    const slideEls = Array.from(track.querySelectorAll('.lu-carousel__slide'));
+    for (let i = slideEls.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [slideEls[i], slideEls[j]] = [slideEls[j], slideEls[i]];
+    }
+    track.replaceChildren(...slideEls);
+
     const slides = track.querySelectorAll('.lu-carousel__slide');
     const total  = slides.length;
     let current  = 0;
