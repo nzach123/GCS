@@ -12,6 +12,11 @@
 
     if (!track) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        track.style.transition = 'none';
+    }
+
     // Fisher–Yates shuffle of slide order on page load so visitors see a fresh sequence each visit
     const slideEls = Array.from(track.querySelectorAll('.lu-carousel__slide'));
     for (let i = slideEls.length - 1; i > 0; i--) {
@@ -32,6 +37,7 @@
     }
 
     function startAuto() {
+        if (prefersReducedMotion) return;
         timer = setInterval(function () {
             goTo(current + 1);
         }, 5000);

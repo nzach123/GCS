@@ -520,12 +520,19 @@ footer {
    Getting Started Guide Styles
    ========================================================================== */
 
-/* Guide Hero Specifics */
+/* Hero lead paragraph — home + guide pages */
+.hero-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 550px;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
 .guide-hero .hero-description {
     font-size: 1.25rem;
     max-width: 500px;
     margin-bottom: 2rem;
-    opacity: 0.9;
 }
 
 .guide-hero .hero-placeholder {
