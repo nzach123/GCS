@@ -1,9 +1,9 @@
 # GCS Website — Implementation Plan
 
-**Version:** 1.0  
-**Date:** 2026-05-17  
-**Source:** `docs/website-specification.md` v1.2  
-**Status:** Ready for execution
+**Version:** 1.1
+**Date:** 2026-05-17
+**Source:** `docs/website-specification.md` v1.3
+**Status:** Ready for execution — visual-calibration pass added (Phase 0.5)
 
 ---
 
@@ -81,7 +81,22 @@ Each page must follow this landmark hierarchy:
 | Sponsor inquiry callout | §4.4.1 | `level-up.html` |
 | Volunteer mailto CTA | §4.4 | `level-up.html` |
 | `--color-muted` variable | §2.1 | `css/styles.css` |
+| `--color-blue-deep` variable | §2.1 | `css/styles.css` |
 | Focus ring = yellow 2px (not blue 3px) | §7 | `css/styles.css` |
+
+#### Visual-Reference Drift (NEW — from v1.3 spec audit)
+
+These items are not "missing" — they exist in code but the current values diverge from the reference screenshots. Each must be corrected to match spec §2.5.
+
+| Drift | Current code | Spec target (v1.3) | Affected |
+|-------|--------------|--------------------|----------|
+| Hero diagonal angle | `135deg` | `110deg` | `styles.css:137`, `level-up.css:13` |
+| Hero diagonal stop | `60%` | `58%` | `styles.css:137`, `level-up.css:13` |
+| Pattern tile size | `140px` | `200px` | `styles.css:155`, `level-up.css:32` |
+| Pattern opacity | `0.15` | `0.22` | `styles.css:158`, `level-up.css:34` |
+| `.tagline` not promoted | Inline class | Rename → `.eyebrow-pill` (and keep `.tagline` alias) | `styles.css:186`, all HTML |
+| `.lu-hero__eyebrow` not generalized | Page-scoped | Promote to global `.eyebrow-text` | `level-up.css:59`, `styles.css` |
+| Focus ring on hero | `--color-primary` 3 px | `--color-accent` 2 px globally | `styles.css:62` |
 
 #### Level Up Page — Body Copy Delta
 
@@ -129,6 +144,7 @@ The `:root` block must be updated to include all spec tokens. Current state is m
   --color-black:      #1A1A1A;
   --color-white:      #FFFFFF;
   --color-muted:      #6B7280;   /* NEW — secondary copy, meta text */
+  --color-blue-deep:  #005A98;   /* NEW — pattern arrow fill on blue plane */
   --color-gray-light: #F4F4F4;
 
   /* === Typography (§2.2) === */
@@ -153,6 +169,12 @@ The `:root` block must be updated to include all spec tokens. Current state is m
   /* === Layout (§2.5) === */
   --container-width:  90%;
   --container-max:    1200px;
+
+  /* === Hero Composition (§2.5.1 / §2.5.2) === */
+  --hero-angle:        110deg;   /* NEW — diagonal split (was 135deg) */
+  --hero-split-pos:    58%;      /* NEW — color stop position (was 60%) */
+  --pattern-tile:      200px;    /* NEW — arrow tile size (was 140px) */
+  --pattern-opacity:   0.22;     /* NEW — pattern strength (was 0.15) */
 }
 ```
 
@@ -182,10 +204,17 @@ h3 { font-size: var(--fs-h3); }
 | `.btn-accent` | Yellow bg ✓ | Black text ✓ | Correct |
 | `.btn-download` | Missing | `.btn-primary` + format/size label + `download` attr | **Create** |
 | `.resource-card` | 1px border, 8px radius ✓ | Hover lifts 2px | Currently uses ring, **add translateY** |
-| Badges | Pill missing | 0.7rem, pill shape, 8 variants | **Refactor to pill** |
+| Badges (status) | Pill missing | 0.7rem, pill shape, 8 variants | **Refactor to pill** |
+| `.eyebrow-pill` | Exists as `.tagline` | Bebas Neue, yellow pill, 1.1–1.25rem (§2.6) | **Rename + alias** — add `.eyebrow-pill` class, keep `.tagline` as alias to avoid churn |
+| `.eyebrow-text` | Exists only as `.lu-hero__eyebrow` | Barlow 700, yellow, 0.85rem, 2px tracking (§2.6) | **Promote to global** |
+| `.hero-quote` | Exists, inline | Same look, named component (§2.6) | **Add docs only** — already correct in CSS |
+| `.feature-list--chevron` | Exists as `.lu-hero__features li::before` | Yellow `›` marker (§2.6) | **Promote to global** so home can adopt it if desired |
+| Hero diagonal | `linear-gradient(135deg, … 60% …)` | `linear-gradient(110deg, … 58% …)` (§2.5.1) | **Recalibrate angle + stop** |
+| Hero pattern | `200px` tile, `0.22` opacity | Same (§2.5.2) | **Raise from `140px` / `0.15`** |
 | Focus ring | Blue 3px | Yellow 2px (§7) | **Fix** |
 | Sponsor callout | Missing | Dark surface, yellow border-top | **Create** |
 | Channel link | Missing | Icon + label pair | **Create** |
+| Carousel strip | Exists in `level-up.css` | 60vh, full-bleed, bottom shadow (§2.6) | **Keep, no changes** |
 
 ### 2.4 Accessibility Fixes
 
@@ -300,31 +329,87 @@ Per §2.5, three breakpoints govern all layout shifts:
 }
 ```
 
-### 3.4 Hero Gradient Logic
+### 3.4 Hero Diagonal — Recalibrated Recipe (§2.5.1)
+
+The v1.2 plan used `135deg` / `60%`. The v1.3 spec audit corrects this to `110deg` / `58%` so the split renders steeper, matching the visual reference. Drive both values from custom properties so they can be tuned in one place.
 
 ```css
-/* Desktop: diagonal split (§2.6) */
-.hero {
-  background: linear-gradient(135deg,
+/* Desktop: diagonal split — token-driven (§2.5.1) */
+.hero,
+.lu-hero {
+  background: linear-gradient(
+    var(--hero-angle),
     var(--color-primary) 0%,
-    var(--color-primary) 60%,
-    var(--color-black) 60%,
-    var(--color-black) 100%
+    var(--color-primary) var(--hero-split-pos),
+    var(--color-black)   var(--hero-split-pos),
+    var(--color-black)   100%
   );
 }
 
-/* Mobile: vertical 50/50 split (§2.6) */
-@media (max-width: 480px) {
-  .hero {
-    background: linear-gradient(180deg,
+/* Tablet + Mobile: vertical 50/50 split (§2.5.1) */
+@media (max-width: 900px) {
+  .hero,
+  .lu-hero {
+    background: linear-gradient(
+      180deg,
       var(--color-primary) 0%,
       var(--color-primary) 50%,
-      var(--color-black) 50%,
-      var(--color-black) 100%
+      var(--color-black)   50%,
+      var(--color-black)   100%
     );
   }
 }
 ```
+
+**Why token-driven:** the angle and split position are the two most likely values to need a tweak after a real-world visual review on a 2K monitor. Keeping them as custom properties means tuning happens in `:root`, not in three separate selectors.
+
+**Edge case to verify:** at very wide aspect ratios (≥ 21:9), a fixed-angle gradient shifts the split position visually. If the split needs to stay at exactly `~58%` of width regardless of aspect, swap the gradient for a `clip-path: polygon()` mask on a black overlay over a solid `--color-primary` background. Defer this work until a real ultrawide test shows the issue — do not pre-optimise.
+
+### 3.5 Arrow Pattern Overlay (§2.5.2)
+
+The pattern is a pseudo-element on the hero, sized and faded via tokens:
+
+```css
+.hero::before,
+.lu-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/Arrow_background.svg');
+  background-size: var(--pattern-tile);   /* 200px */
+  background-repeat: repeat;
+  opacity: var(--pattern-opacity);        /* 0.22 */
+  pointer-events: none;
+  z-index: 1;
+}
+```
+
+Keep the pattern *global* across the hero (covering both blue and black halves). The black plane visually mutes the pattern naturally because the arrows are dark blue on dark; the eye reads them only on the blue side. Do not mask the pattern with a second clip-path — the natural muting is part of the design's depth.
+
+### 3.6 Hero Visual Anchoring CSS (§2.5.3)
+
+The hero visual (logo or controllers) crosses the diagonal on `index.html` and `get-started.html`. Achieve this with negative `left` positioning on the `.hero-visual` flex item:
+
+```css
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: -2rem;   /* Pull visual left so it overlaps the diagonal */
+  z-index: 2;
+}
+
+.hero-logo,
+.guide-hero-img {
+  width: 110%;
+  max-width: 550px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+```
+
+For `level-up.html`, the badge sits fully on black — no negative offset needed. Keep `.lu-hero__badge` centered in its grid cell as it is today.
 
 ---
 
@@ -335,12 +420,27 @@ Per §2.5, three breakpoints govern all layout shifts:
 
 | # | Task | Files | Spec Ref |
 |---|------|-------|----------|
-| 0.1 | Add `--color-muted`, spacing tokens, fluid type variables to `:root` | `styles.css` | §2.1, §2.2, §2.5 |
+| 0.1 | Add `--color-muted`, `--color-blue-deep`, spacing tokens, fluid type variables to `:root` | `styles.css` | §2.1, §2.2, §2.5 |
 | 0.2 | Fix focus ring: change from blue 3px to yellow 2px | `styles.css` | §7 |
 | 0.3 | Add `@media (prefers-reduced-motion)` block | `styles.css` | §7 |
 | 0.4 | Normalize breakpoints to 480px / 900px | `styles.css`, `level-up.css` | §2.5 |
 | 0.5 | Apply `clamp()` type ramp to h1–h3 via variables | `styles.css` | §2.2 |
 | 0.6 | Delete `css/showcase.css` and `js/showcase-rotation.js` (deprecated) | CSS, JS | §3 #12 |
+
+### Phase 0.5 — Visual Calibration (NEW)
+**Estimated effort: 1 hour**
+
+These tasks bring the existing hero implementation into alignment with the v1.3 visual reference. They're isolated as a separate phase because they're high-leverage (touch every page) but tightly scoped (token swaps + two recipe rewrites). Do them before Phase 1 components so downstream work inherits the corrected look.
+
+| # | Task | Files | Spec Ref |
+|---|------|-------|----------|
+| 0.5.1 | Add hero-composition tokens (`--hero-angle: 110deg`, `--hero-split-pos: 58%`, `--pattern-tile: 200px`, `--pattern-opacity: 0.22`) to `:root` | `styles.css` | §2.5.1, §2.5.2 |
+| 0.5.2 | Rewrite `.hero` background to use the token-driven gradient recipe (§3.4) | `styles.css` | §2.5.1 |
+| 0.5.3 | Rewrite `.lu-hero` background to use the same recipe (currently duplicates the wrong angle) | `level-up.css` | §2.5.1 |
+| 0.5.4 | Rewrite `.hero::before` and `.lu-hero::before` pattern overlay to use `--pattern-tile` / `--pattern-opacity` | `styles.css`, `level-up.css` | §2.5.2 |
+| 0.5.5 | Promote `.tagline` → `.eyebrow-pill` (add the new class, retain `.tagline` as an alias selector so existing HTML keeps working) | `styles.css` | §2.6 |
+| 0.5.6 | Promote `.lu-hero__eyebrow` → `.eyebrow-text` (move to `styles.css`, leave the page-scoped class as alias) | `styles.css`, `level-up.css` | §2.6 |
+| 0.5.7 | Visual QA: load all three pages at 1440 px and confirm the diagonal angle and pattern density read as a match for the reference screenshots in `referance/` | All HTML | §2.5 |
 
 ### Phase 1 — Global Components
 **Estimated effort: 2–3 hours**
@@ -428,7 +528,8 @@ Per §2.5, three breakpoints govern all layout shifts:
 
 ```mermaid
 graph TD
-    P0["Phase 0: Foundation"] --> P1["Phase 1: Components"]
+    P0["Phase 0: Foundation"] --> P05["Phase 0.5: Visual Calibration"]
+    P05 --> P1["Phase 1: Components"]
     P1 --> P2["Phase 2: Home"]
     P1 --> P3["Phase 3: Get Started"]
     P1 --> P4["Phase 4: Level Up"]
@@ -437,7 +538,7 @@ graph TD
     P4 --> P5
 ```
 
-**Phases 2, 3, and 4 can be executed in parallel** after Phase 1 completes. Phase 5 requires all pages to be finished.
+**Phases 2, 3, and 4 can be executed in parallel** after Phase 1 completes. Phase 5 requires all pages to be finished. Phase 0.5 must precede Phase 1 so that all components inherit the recalibrated hero tokens.
 
 ---
 
@@ -461,13 +562,34 @@ graph TD
 | Phase | Hours |
 |-------|-------|
 | 0 — Foundation | 1–2 |
+| 0.5 — Visual Calibration | 1 |
 | 1 — Components | 2–3 |
 | 2 — Home | 1–2 |
 | 3 — Get Started | 6–8 |
 | 4 — Level Up | 2–3 |
 | 5 — QA | 2–3 |
-| **Total** | **14–21 hours** |
+| **Total** | **15–22 hours** |
 
 ---
 
-*End of implementation plan. Execute phases sequentially (0 → 1 → 2/3/4 parallel → 5).*
+## Change Log
+
+### Version 1.1 — 2026-05-17
+
+**Synced to spec v1.3 (visual reference audit)**
+
+- Added §1.3 "Visual-Reference Drift" table — captures the seven measured deltas between current CSS and the recalibrated v1.3 spec (diagonal angle, stop position, pattern size, pattern opacity, eyebrow class promotions, focus ring).
+- Updated §2.1 `:root` token block: added `--color-blue-deep`, `--hero-angle`, `--hero-split-pos`, `--pattern-tile`, `--pattern-opacity`.
+- Expanded §2.3 Component Tokens with five new rows: `.eyebrow-pill`, `.eyebrow-text`, `.hero-quote`, `.feature-list--chevron`, `Carousel strip`. Plus two recalibration rows for the hero diagonal and pattern.
+- Rewrote §3.4 to use token-driven gradient at `110deg` / `58%` (was `135deg` / `60%`).
+- Added §3.5 Arrow Pattern Overlay recipe.
+- Added §3.6 Hero Visual Anchoring CSS.
+- Added **Phase 0.5 — Visual Calibration** (7 tasks, ~1 hour) between Phase 0 and Phase 1 in the execution roadmap. Updated dependency graph and effort total accordingly.
+
+### Version 1.0 — 2026-05-17
+
+Initial plan, synced to spec v1.2.
+
+---
+
+*End of implementation plan. Execute phases sequentially (0 → 0.5 → 1 → 2/3/4 parallel → 5).*

@@ -1,9 +1,9 @@
 # Game Creators Space (GCS) — Website Specification Document
 
-**Version:** 1.2
+**Version:** 1.3
 **Date:** 2026-05-17
 **Owner:** GCS Web Working Group
-**Status:** Revised — three-page scope confirmed
+**Status:** Revised — visual reference audited against live screenshots; composition system locked
 
 ---
 
@@ -32,8 +32,11 @@ The site is built as a plain HTML5 / CSS3 / vanilla-JS static site (no build ste
 | `--color-black`    | `#1A1A1A` | Dark surface. Diagonal hero split, footer.                  |
 | `--color-white`    | `#FFFFFF` | Body text on dark surfaces, card backgrounds.               |
 | `--color-muted`    | `#6B7280` | Secondary copy, meta text, disabled states.                 |
+| `--color-blue-deep`| `#005A98` | Pattern arrow fill on the blue plane (≈ primary − 12 L*).   |
 
 **Contrast rule:** Body text must meet WCAG AA (4.5:1 contrast). Yellow accent (`#FFC700`) is approved on **black or dark-blue** backgrounds only — it does **not** meet contrast on white surfaces.
+
+**Pattern token:** the hero arrow pattern is treated as a brand element, not a decorative afterthought. It carries the blue plane's identity. See §2.5 for sizing and opacity.
 
 ### 2.2 Typography
 
@@ -43,6 +46,14 @@ The site is built as a plain HTML5 / CSS3 / vanilla-JS static site (no build ste
 | Body                | Barlow       | 400 / 500  | Sentence   | Default body copy.                            |
 | Body emphasis       | Barlow       | 700        | Sentence   | Strong, badges, CTA labels.                   |
 | Eyebrow / Caption   | Barlow       | 700        | UPPERCASE  | 0.85 rem with 2 px letter-spacing.            |
+| Pill eyebrow        | Bebas Neue   | 400        | UPPERCASE  | 1.1–1.25 rem, 1 px tracking, yellow pill bg.  |
+
+**Hero headline rules (verified against visual reference):**
+
+- `line-height: 0.9` — headlines stack tightly, two lines almost touch.
+- `letter-spacing: 0` (no tracking) — Bebas Neue is already condensed; added tracking weakens the brick.
+- `margin-bottom: 0.5–0.75rem` between headline and subtitle.
+- Never apply `text-shadow` or `filter: drop-shadow` — headlines sit *flat* on the pattern; depth comes from the diagonal split, not the type.
 
 **Fluid type ramp** (use `clamp()` for headlines):
 
@@ -81,7 +92,7 @@ The site is built as a plain HTML5 / CSS3 / vanilla-JS static site (no build ste
 - All other images use `loading="lazy"` and explicit `width`/`height` to prevent CLS.
 - Decorative images (e.g., background pattern) use `aria-hidden="true"` or CSS `background-image`.
 
-### 2.5 Layout & Spacing
+### 2.5 Layout, Spacing & Hero Composition
 
 | Token         | Value     | Use case                              |
 |---------------|-----------|---------------------------------------|
@@ -99,18 +110,76 @@ The site is built as a plain HTML5 / CSS3 / vanilla-JS static site (no build ste
 | Tablet      | 481–900 px | Single column hero, 2-up resource grid.               |
 | Desktop     | 901+ px    | Two-column hero, 3-up resource grid, diagonal split.  |
 
+#### 2.5.1 The Diagonal Split (brand signature)
+
+The blue-to-black diagonal is the most visible identity element of the site. It must match the visual reference exactly — a hard-edged split at a **steeper-than-45° angle**, not a 135° CSS gradient.
+
+| Property              | Value                                       | Why                                                  |
+|-----------------------|---------------------------------------------|------------------------------------------------------|
+| CSS angle (desktop)   | `110deg` (acceptable range 105°–115°)       | Reference reads ~75° from horizontal, not 45°.       |
+| Color stop position   | `58%` blue → `58%` black (no soft transition) | Hard edge, no feathering.                          |
+| Mobile (≤ 480 px)     | `180deg`, `50%` / `50%`                     | Vertical stack: blue on top, black on bottom.        |
+| Tablet (481–900 px)   | Same as mobile (vertical split)             | Maintains text/image stacking order.                 |
+
+**Implementation choice:** a single `linear-gradient` at the stated angle is the simplest path. If the angle needs to be visually independent of viewport aspect (e.g., to keep the split position fixed at the same percentage on ultra-wide displays), fall back to a `clip-path: polygon()` mask on a black layer over a solid blue base.
+
+> The previous v1.2 spec called for `135deg` with `60%` stops. That produces a gradient line at 45° from horizontal, which is visibly shallower than the reference. v1.3 corrects this to `110deg / 58%`.
+
+#### 2.5.2 The Arrow Pattern Overlay
+
+| Property            | Value                                                   |
+|---------------------|---------------------------------------------------------|
+| Asset               | `assets/Arrow_background.svg`                           |
+| Tile size           | `200px` (acceptable range 180–220 px)                   |
+| Repeat              | `repeat`                                                |
+| Opacity             | `0.22` (acceptable range 0.20–0.28)                     |
+| Position            | Pseudo-element layer, blend mode `normal`, scoped to the blue half (or rendered globally and visually muted by the black plane). |
+| Z-index             | Behind hero content (`z-index: 1`), above gradient (`0`).|
+
+**Treat the pattern as a brand element**, not background noise. It is a primary recognition cue alongside the diagonal split and the yellow accent. Previously specced at `140px / 0.15`; v1.3 increases both to match the visual reference.
+
+#### 2.5.3 Hero Visual Anchoring (visual–diagonal interaction)
+
+The hero "visual" element (logo, controllers, photo badge) is intentionally placed so it **crosses the diagonal**. This anchors the composition and reads as a deliberate design move — not a layout mistake.
+
+| Page              | Visual asset                       | Placement rule                                              |
+|-------------------|------------------------------------|-------------------------------------------------------------|
+| `index.html`      | `gsc-logo.png` (full-color)        | Centered on the diagonal, ~55% on black / 45% on blue.      |
+| `get-started.html`| `Controllers.png` (3D render)      | Right-aligned, primary controller body straddles the split. |
+| `level-up.html`   | `Level up logo.png` (pixel badge)  | Right column, fully on black plane (no crossing).           |
+
+#### 2.5.4 Level Up Stacked Composition
+
+Level Up does **not** use the side-by-side hero layout. It uses a two-zone vertical stack:
+
+```
+┌──────────────────────────────────────┐
+│  Full-bleed photo carousel (~60vh)   │  ← cinematic strip, edge-to-edge
+├──────────────────────────────────────┤
+│  Diagonal hero panel (text | badge)  │  ← same diagonal system as §2.5.1
+└──────────────────────────────────────┘
+```
+
+The carousel's bottom edge meets the diagonal panel's top edge with no separator. The diagonal split begins immediately below the photo, so the eye flows: photo → eyebrow → headline → body → CTA.
+
 ### 2.6 Components
 
 | Component         | Spec                                                                 |
 |-------------------|----------------------------------------------------------------------|
-| `.btn-primary`    | White background, dark text, 0.75 rem × 1.5 rem padding, 4 px radius. |
+| `.btn-primary`    | White background, black text, 0.75 rem × 1.5 rem padding, 4 px radius. Label in Bebas Neue, uppercase. No shadow at rest; `translateY(-2px)` on hover. |
 | `.btn-accent`     | `--color-accent` background, black text. Use for the single highest-priority CTA per view. |
 | `.btn-download`   | `.btn-primary` styling; label suffixed with format + file size (`Download GDD Template (PDF · 240 KB)`). Uses `<a href="..." download>`. |
 | `.resource-card`  | White surface, 1 px subtle border, 8 px radius, hover lifts 2 px.    |
-| Badges            | Pill shape, 0.7 rem font. Variants: `essential`, `free`, `paid`, `cc0`, `attribution`, `mixed`, `restricted`, `download`. |
-| Hero gradient     | Desktop: `linear-gradient(135deg, blue 0–60%, black 60–100%)`. Mobile: vertical 50/50 split. |
+| Badges (status)   | Pill shape, 0.7 rem font. Variants: `essential`, `free`, `paid`, `cc0`, `attribution`, `mixed`, `restricted`, `download`. |
+| `.eyebrow-pill`   | **Hero eyebrow — pill variant.** Yellow (`--color-accent`) background, black text, Bebas Neue, 1.1–1.25 rem, full pill radius (≥ 50 px), 0.25 rem × 1 rem padding, 1 px tracking. Used on `index.html` (`BUILD.PLAY.CONNECT`) and `get-started.html` (`GAME DEV 101`). |
+| `.eyebrow-text`   | **Hero eyebrow — plain variant.** Yellow text only (no background), Barlow 700, 0.85 rem, uppercase, 2 px tracking. Used on `level-up.html` (`ANNUAL CONFERENCE · EDMONTON`). Pick this variant when the page has a strong supporting visual (photo carousel, badge) that should carry the visual weight. |
+| `.hero-quote`     | Italic Barlow on dark plane; 3–4 px yellow left border, 1 rem left padding, opacity 0.9, `max-width: 500px`. Used for attributed pull quotes inside the hero (e.g., Jesse Schell on `get-started.html`). |
+| `.feature-list--chevron` | Hero feature list with yellow `›` (or `→`) marker. Used on `level-up.html` to enumerate conference highlights. Inline-block bullets, Barlow 400, line-height 1.9. |
+| Hero diagonal     | See §2.5.1 — `linear-gradient(110deg, blue 0–58%, black 58–100%)` desktop, vertical 50/50 mobile. Hard edge, no feather. |
+| Hero pattern      | See §2.5.2 — `Arrow_background.svg` at 200 px tile, 0.22 opacity, behind hero content. |
 | Channel link      | Icon + label pair used in the footer (§10). Three live channels only: Ookslife, Discord, Instagram. |
 | Sponsor callout   | Dark surface block, yellow accent border-top, used on `level-up.html` to surface the sponsor inquiry CTA. |
+| Carousel strip    | Full-bleed photo container on `level-up.html`. Height `60vh` (min 400 px, max 700 px). Black bg fallback. Box shadow `0 16px 48px rgba(0,0,0,0.5)` along bottom edge to lift it visually above the diagonal panel below. |
 
 ---
 
@@ -504,6 +573,23 @@ These are the **only** channels the website should link to. Older channels (itch
 ---
 
 ## 12. Change Log
+
+### Version 1.3 — 2026-05-17
+
+**Visual reference audit — composition system locked against live screenshots**
+
+The v1.2 spec described the design language abstractly. v1.3 measures the actual rendered pages and codifies the brand signatures so future implementation cannot drift.
+
+- **§2.1** — Added `--color-blue-deep` (`#005A98`) for the pattern arrow fill, and a note elevating the arrow pattern to brand-element status.
+- **§2.2** — Added `Pill eyebrow` typographic role (Bebas Neue, yellow pill background). Added explicit hero-headline rules: `line-height: 0.9`, `letter-spacing: 0`, no shadow/drop-shadow.
+- **§2.5** — Renamed to "Layout, Spacing & Hero Composition." Added four new subsections:
+  - §2.5.1 **The Diagonal Split** — corrected angle from `135deg` to `110deg` (range 105°–115°) and stop position from `60%` to `58%`. Documented hard-edge requirement.
+  - §2.5.2 **The Arrow Pattern Overlay** — raised tile size from `140 px` to `200 px` and opacity from `0.15` to `0.22` to match the visual reference.
+  - §2.5.3 **Hero Visual Anchoring** — codified that hero visuals deliberately cross the diagonal on `index.html` and `get-started.html`, but sit fully on black on `level-up.html`.
+  - §2.5.4 **Level Up Stacked Composition** — captured the photo-carousel-above-diagonal-panel structure that distinguishes Level Up from the other two pages.
+- **§2.6** — Added five new component definitions: `.eyebrow-pill`, `.eyebrow-text`, `.hero-quote` (promoted from inline pattern), `.feature-list--chevron`, and `Carousel strip`. Split the hero gradient row into separate `Hero diagonal` and `Hero pattern` rows so each is independently testable.
+
+**Why this revision matters:** the current `css/styles.css` uses `linear-gradient(135deg, … 60% …)` and a `0.15`-opacity 140 px pattern. Both values are off the visual reference. Shipping against v1.2 would lock in the drift. v1.3 restores parity.
 
 ### Version 1.2 — 2026-05-17
 
