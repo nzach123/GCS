@@ -8,12 +8,11 @@
     position: relative;
     min-height: 100vh;
     overflow: hidden;
-    /* Same diagonal blue-to-black split as index.html */
     background: linear-gradient(
-        135deg,
+        var(--hero-angle),
         var(--color-primary) 0%,
-        var(--color-primary) 60%,
-        var(--color-black)   60%,
+        var(--color-primary) var(--hero-split-pos),
+        var(--color-black)   var(--hero-split-pos),
         var(--color-black)   100%
     );
     display: flex;
@@ -23,15 +22,15 @@
     padding: calc(60px + 3rem) 0 6rem; /* Remove horizontal padding so carousel can be full-bleed */
 }
 
-/* Arrow-pattern overlay (re-uses the global asset) */
+/* Arrow-pattern overlay (§2.5.2) */
 .lu-hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image: url('../assets/Arrow_background.svg');
-    background-size: 140px;
+    background-size: var(--pattern-tile);
     background-repeat: repeat;
-    opacity: 0.15;
+    opacity: var(--pattern-opacity);
     pointer-events: none;
     z-index: 0;
 }
@@ -56,15 +55,8 @@
     padding-right: 1rem;
 }
 
-.lu-hero__eyebrow {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-accent);
-    margin-bottom: 0.75rem;
-}
+/* Alias — styles live in global .eyebrow-text (styles.css §2.6) */
+.lu-hero__eyebrow { display: block; }
 
 .lu-hero__headline {
     font-family: var(--font-heading);
