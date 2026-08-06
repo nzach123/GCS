@@ -3,13 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description"
         content="Level Up is the annual student game dev conference on NAIT campus. Industry booths, panels, and Q&A with working developers from across Alberta.">
     <meta property="og:title" content="Level Up | Game Creators Space">
     <meta property="og:description" content="Level Up is the only student-run game dev conference in Edmonton. Industry studios, panels, and a chance to connect with the developers you'll be working alongside.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/og-level-up.jpg">
+    <meta property="og:image" content="assets/gsc-logo.png">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="1080">
+    <meta name="theme-color" content="#0077C8">
+    <link rel="manifest" href="/manifest.json">
     <title>Level Up | Game Creators Space</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +35,7 @@
             <a href="get-started.html">Get Started</a>
             <a href="level-up.html">Level Up</a>
         </nav>
+        <noscript><style>.hamburger-btn{display:none!important}.site-header nav{display:flex!important;position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:0!important;background:transparent!important;flex-direction:row!important;gap:2rem!important;backdrop-filter:none!important;box-shadow:none!important}.site-header nav a{border-bottom:none!important;padding:0!important;font-size:0.9rem!important;min-height:auto!important}</style></noscript>
     </header>
 
     <main>
@@ -42,46 +47,74 @@
             <div class="lu-carousel" role="region" aria-label="Level Up event photos">
                 <div class="lu-carousel__track" id="luCarouselTrack">
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00448.webp" alt="Level Up event photo" loading="eager" width="2557" height="1740">
+                        <img src="assets/photos/levelup/photos/DSC00448.webp" alt="Level Up event photo" loading="eager" fetchpriority="high" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00448-400w.webp 400w, assets/photos/levelup/photos/DSC00448-800w.webp 800w, assets/photos/levelup/photos/DSC00448-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00451.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00451.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00451-400w.webp 400w, assets/photos/levelup/photos/DSC00451-800w.webp 800w, assets/photos/levelup/photos/DSC00451-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00453.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00453.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00453-400w.webp 400w, assets/photos/levelup/photos/DSC00453-800w.webp 800w, assets/photos/levelup/photos/DSC00453-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00457.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00457.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00457-400w.webp 400w, assets/photos/levelup/photos/DSC00457-800w.webp 800w, assets/photos/levelup/photos/DSC00457-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00460.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00460.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00460-400w.webp 400w, assets/photos/levelup/photos/DSC00460-800w.webp 800w, assets/photos/levelup/photos/DSC00460-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00463.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00463.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00463-400w.webp 400w, assets/photos/levelup/photos/DSC00463-800w.webp 800w, assets/photos/levelup/photos/DSC00463-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00476.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00476.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00476-400w.webp 400w, assets/photos/levelup/photos/DSC00476-800w.webp 800w, assets/photos/levelup/photos/DSC00476-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00478.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00478.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00478-400w.webp 400w, assets/photos/levelup/photos/DSC00478-800w.webp 800w, assets/photos/levelup/photos/DSC00478-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00479.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00479.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00479-400w.webp 400w, assets/photos/levelup/photos/DSC00479-800w.webp 800w, assets/photos/levelup/photos/DSC00479-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00480.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00480.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00480-400w.webp 400w, assets/photos/levelup/photos/DSC00480-800w.webp 800w, assets/photos/levelup/photos/DSC00480-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00483.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00483.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00483-400w.webp 400w, assets/photos/levelup/photos/DSC00483-800w.webp 800w, assets/photos/levelup/photos/DSC00483-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00512.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00512.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00512-400w.webp 400w, assets/photos/levelup/photos/DSC00512-800w.webp 800w, assets/photos/levelup/photos/DSC00512-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00516.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00516.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00516-400w.webp 400w, assets/photos/levelup/photos/DSC00516-800w.webp 800w, assets/photos/levelup/photos/DSC00516-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                     <div class="lu-carousel__slide">
-                        <img src="assets/photos/levelup/photos/DSC00517.webp" alt="Level Up event photo" loading="lazy">
+                        <img src="assets/photos/levelup/photos/DSC00517.webp" alt="Level Up event photo" loading="lazy" width="2557" height="1740"
+                             srcset="assets/photos/levelup/photos/DSC00517-400w.webp 400w, assets/photos/levelup/photos/DSC00517-800w.webp 800w, assets/photos/levelup/photos/DSC00517-1200w.webp 1200w"
+                             sizes="(max-width: 767px) 100vw, (max-width: 1024px) 100vw, 1200px">
                     </div>
                 </div>
 
@@ -111,7 +144,9 @@
 
                 <!-- RIGHT: Level Up Logo Badge -->
                 <div class="lu-hero__badge" aria-hidden="true">
-                    <img src="assets/photos/levelup/Level up logo.png" alt="Level Up Logo" class="lu-badge__img" width="2705" height="2475">
+                    <img src="assets/photos/levelup/Level up logo.png" alt="Level Up Logo" class="lu-badge__img" width="2705" height="2475"
+                         srcset="assets/photos/levelup/levelup-badge-120w.webp 120w, assets/photos/levelup/levelup-badge-240w.webp 240w, assets/photos/levelup/levelup-badge-350w.webp 350w"
+                         sizes="(max-width: 374px) 80px, (max-width: 480px) 90px, (max-width: 767px) 110px, (max-width: 1024px) 200px, (max-width: 1280px) 250px, 350px">
                 </div>
 
             </div><!-- /.lu-hero__inner -->
@@ -136,7 +171,7 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <h2>Game Creators Space</h2>
-                    <p class="meeting-detail">NAITS's Game developer club</p>
+                    <p class="meeting-detail">NAIT's Game developer club</p>
                     <div class="channels-row">
                         <a href="https://www.ookslife.ca/organization/gamecreatorsspace" class="channel-link" target="_blank" rel="noopener" aria-label="Ookslife">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
@@ -157,7 +192,8 @@
         </div>
     </footer>
 
-    <script src="js/level-up.js"></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/level-up.js" defer></script>
 </body>
 
 </html>

@@ -3,13 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description"
         content="Game Creators Space is the campus home for NAIT students who want to make games. Build, ship, and connect weekly.">
     <meta property="og:title" content="Game Creators Space">
     <meta property="og:description" content="Game Creators Space is the campus home for NAIT students who want to make games — not just play them. We meet weekly to design, build, break, and ship together.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/og-home.jpg">
+    <meta property="og:image" content="assets/gsc-logo.png">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="1080">
+    <meta name="theme-color" content="#0077C8">
+    <link rel="manifest" href="/manifest.json">
     <title>Game Creators Space</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +31,7 @@
             <a href="get-started.html">Get Started</a>
             <a href="level-up.html">Level Up</a>
         </nav>
+        <noscript><style>.hamburger-btn{display:none!important}.site-header nav{display:flex!important;position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:0!important;background:transparent!important;flex-direction:row!important;gap:2rem!important;backdrop-filter:none!important;box-shadow:none!important}.site-header nav a{border-bottom:none!important;padding:0!important;font-size:0.9rem!important;min-height:auto!important}</style></noscript>
     </header>
 
     <main>
@@ -52,7 +57,9 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <img src="assets/gsc-logo.png" alt="GCS Logo - Game Creators Space Controller" class="hero-logo" width="1080" height="1080">
+                    <img src="assets/gsc-logo.png" alt="GCS Logo - Game Creators Space Controller" class="hero-logo" width="1080" height="1080" fetchpriority="high"
+                         srcset="assets/logos/gsc-logo-250w.webp 250w, assets/logos/gsc-logo-500w.webp 500w"
+                         sizes="(max-width: 767px) 90vw, 550px">
                 </div>
             </div>
         </section>
@@ -62,8 +69,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h2>Game Creators Space · NAIT</h2>
-                    <p class="meeting-detail">Meet with us weekly. See our <a href="https://www.ookslife.ca/organization/gamecreatorsspace" target="_blank" rel="noopener">Ookslife page</a> for the current schedule.</p>
+                    <h2>Game Creators Space</h2>
+                    <p class="meeting-detail">NAIT's Game developer club</p>
                     <div class="channels-row">
                         <a href="https://www.ookslife.ca/organization/gamecreatorsspace" class="channel-link" target="_blank" rel="noopener" aria-label="Ookslife">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
@@ -83,6 +90,7 @@
             <p class="copyright">&copy; 2026 Game Creators Space</p>
         </div>
     </footer>
+    <script src="js/nav.js" defer></script>
 </body>
 
 </html>
