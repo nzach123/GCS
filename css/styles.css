@@ -576,7 +576,7 @@ footer {
 
 /* Chapters Common */
 .chapter {
-    padding: 5rem 0;
+    padding: 1.5rem 0;
 }
 
 .chapter:nth-child(even) {
@@ -586,7 +586,7 @@ footer {
 .chapter-header {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 1rem;
 }
 
 .chapter-header h2 {
@@ -597,7 +597,7 @@ footer {
 }
 
 .chapter-header h3 {
-    font-size: 3rem;
+    font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
