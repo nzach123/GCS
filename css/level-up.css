@@ -120,11 +120,16 @@
 
 /* ---- TOP: Carousel ---- */
 .lu-carousel {
+    /* Every photo is 2557x1740. The box adopts that ratio so object-fit is never
+       left with empty space to fill with black pillarbox. --lu-max-h caps how tall
+       the carousel may get before the width stops growing. */
+    --lu-photo-ratio: 2557 / 1740;
+    --lu-max-h: 72vh;
+
     position: relative;
-    width: 100%;
-    height: 60vh;
-    min-height: 400px;
-    max-height: 700px;
+    width: min(100%, 1200px, calc(var(--lu-max-h) * 2557 / 1740));
+    aspect-ratio: var(--lu-photo-ratio);
+    margin-inline: auto;
     overflow: hidden;
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
     background: var(--color-black);
@@ -156,8 +161,9 @@
 .lu-carousel__slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    background-color: #000;
+    /* The track box already matches the photo ratio, so `cover` crops nothing —
+       it just absorbs sub-pixel rounding that `contain` would show as a sliver. */
+    object-fit: cover;
     display: block;
 }
 
@@ -259,10 +265,6 @@
     .lu-hero__headline {
         font-size: clamp(2rem, 12vw, 2.8rem);
     }
-    .lu-carousel {
-        height: 35vh;
-        min-height: 220px;
-    }
     .lu-carousel__btn {
         width: 48px;
         height: 48px;
@@ -302,11 +304,6 @@
         gap: 2rem;
         text-align: center;
         padding: 0 1.5rem;
-    }
-
-    .lu-carousel {
-        height: 40vh;
-        min-height: 300px;
     }
 
     .lu-hero__badge {
@@ -350,8 +347,7 @@
         padding: 0 2rem;
     }
     .lu-carousel {
-        height: 50vh;
-        min-height: 350px;
+        --lu-max-h: 60vh;
     }
     .lu-badge__img {
         width: 200px;
@@ -386,6 +382,6 @@
         width: 250px;
     }
     .lu-carousel {
-        height: 55vh;
+        --lu-max-h: 65vh;
     }
 }
