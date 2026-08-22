@@ -12,6 +12,10 @@ async function ensureDir(dir) {
     await fs.mkdir(dir, { recursive: true });
 }
 
+/* Matches the -<width>w suffix this script appends, so generated variants are
+   never treated as sources on a re-run (that produced DSC00448-400w-400w.webp). */
+const VARIANT_SUFFIX = /-\d+w$/;
+
 async function resizeImage(srcPath, destPath, width) {
     await sharp(srcPath)
         .resize({ width, withoutEnlargement: true })
@@ -20,14 +24,41 @@ async function resizeImage(srcPath, destPath, width) {
     console.log(`  Created ${path.basename(destPath)} (${width}w)`);
 }
 
+async function resizePng(srcPath, destPath, size) {
+    await sharp(srcPath)
+        .resize({ width: size, height: size, fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+        .png()
+        .toFile(destPath);
+    console.log(`  Created ${path.basename(destPath)} (${size}x${size})`);
+}
+
 async function main() {
-    // 1. Hero logo (gsc-logo.png, 1080×1080) → 250w, 500w
+    // 1. Hero logo (gsc-logo.png, 1080×1080) → 250w, 500w, 1080w
+    //    1080w exists because the hero slot is 550 CSS px, which needs ~1100px on a
+    //    2x display; without it the browser upscaled the 500w variant.
     console.log('\n=== Hero Logo ===');
     const logoDir = path.join(ASSETS, 'logos');
     await ensureDir(logoDir);
     const logoPath = path.join(ASSETS, 'gsc-logo.png');
     await resizeImage(logoPath, path.join(logoDir, 'gsc-logo-250w.webp'), 250);
     await resizeImage(logoPath, path.join(logoDir, 'gsc-logo-500w.webp'), 500);
+    await resizeImage(logoPath, path.join(logoDir, 'gsc-logo-1080w.webp'), 1080);
+
+    // 1b. Header logo (gsc-logo-plain.png, 1080×1080) → 40w slot at 1x/2x/3x
+    //     Previously the full 1080×1080 PNG was decoded for a 40px slot on every page.
+    console.log('\n=== Header Logo ===');
+    const plainPath = path.join(ASSETS, 'gsc-logo-plain.png');
+    await resizeImage(plainPath, path.join(logoDir, 'gsc-logo-plain-40w.webp'), 40);
+    await resizeImage(plainPath, path.join(logoDir, 'gsc-logo-plain-80w.webp'), 80);
+    await resizeImage(plainPath, path.join(logoDir, 'gsc-logo-plain-120w.webp'), 120);
+
+    // 1c. PWA icons — manifest.json declared 192/512 while pointing at the 1080×1080
+    //     source, so Chrome could reject the icon for install prompts.
+    console.log('\n=== PWA Icons ===');
+    const iconDir = path.join(ASSETS, 'icons');
+    await ensureDir(iconDir);
+    await resizePng(logoPath, path.join(iconDir, 'icon-192.png'), 192);
+    await resizePng(logoPath, path.join(iconDir, 'icon-512.png'), 512);
 
     // 2. Level Up badge (Level up logo.png, 2705×2475) → 120w, 240w, 350w
     console.log('\n=== Level Up Badge ===');
@@ -41,7 +72,9 @@ async function main() {
     console.log('\n=== Carousel Images ===');
     const photosDir = path.join(ASSETS, 'photos', 'levelup', 'photos');
     const files = await fs.readdir(photosDir);
-    const webpFiles = files.filter(f => f.endsWith('.webp'));
+    const webpFiles = files.filter(f =>
+        f.endsWith('.webp') && !VARIANT_SUFFIX.test(path.parse(f).name)
+    );
 
     for (const file of webpFiles) {
         const baseName = path.parse(file).name;

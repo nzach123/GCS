@@ -46,25 +46,35 @@
                 nav.parentNode.insertBefore(overlay, nav.nextSibling);
             }
             overlay.style.display = '';
+            /* Stop the page behind the drawer from scrolling under it */
+            document.body.style.overflow = 'hidden';
             var focusable = getFocusableElements();
             if (focusable.length > 0) {
                 focusable[0].focus();
             }
         }
 
-        function closeMenu() {
+        /**
+         * @param {boolean} restoreFocus Return focus to the hamburger. Only true when
+         * the user closed the menu deliberately — on a resize-triggered close the
+         * button is display:none, so focusing it would strand focus on a hidden element.
+         */
+        function closeMenu(restoreFocus) {
             btn.setAttribute('aria-expanded', 'false');
             nav.classList.remove('nav--open', 'nav--animating');
             overlay.style.display = 'none';
             if (overlay.parentNode) {
                 overlay.parentNode.removeChild(overlay);
             }
-            btn.focus();
+            document.body.style.overflow = '';
+            if (restoreFocus === true) {
+                btn.focus();
+            }
         }
 
         function toggleMenu() {
             var isOpen = btn.getAttribute('aria-expanded') === 'true';
-            if (isOpen) { closeMenu(); } else { openMenu(); }
+            if (isOpen) { closeMenu(true); } else { openMenu(); }
         }
 
         /* ---- Focus trap ---- */
@@ -90,11 +100,11 @@
         /* ---- Event listeners ---- */
         btn.addEventListener('click', toggleMenu);
 
-        overlay.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', function () { closeMenu(true); });
 
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
-                closeMenu();
+                closeMenu(true);
                 e.preventDefault();
             }
             if (e.key === 'Tab') {
@@ -106,19 +116,14 @@
             if (!header.contains(e.target) &&
                 !overlay.contains(e.target) &&
                 btn.getAttribute('aria-expanded') === 'true') {
-                closeMenu();
+                closeMenu(true);
             }
         });
 
-        /* ---- Re-query links on open for safety ---- */
-        var openListener = function () {
-            /* Re-query links each time menu opens */
-            var links = Array.from(nav.querySelectorAll('a'));
-            links.forEach(function (link) {
-                link.addEventListener('click', closeMenu);
-            });
-        };
-        btn.addEventListener('click', openListener);
+        /* ---- Close on nav link click (the link itself still navigates) ---- */
+        Array.prototype.forEach.call(nav.querySelectorAll('a'), function (link) {
+            link.addEventListener('click', function () { closeMenu(false); });
+        });
 
         /* ---- Resize close ---- */
         var resizeTimer;
@@ -126,7 +131,8 @@
             cancelAnimationFrame(resizeTimer);
             resizeTimer = requestAnimationFrame(function () {
                 if (window.innerWidth > 767 && btn.getAttribute('aria-expanded') === 'true') {
-                    closeMenu();
+                    /* Hamburger is display:none above 767px — don't focus it. */
+                    closeMenu(false);
                 }
             });
         });

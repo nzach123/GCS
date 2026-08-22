@@ -1,28 +1,36 @@
 /**
  * Level Up Page — Carousel Controller
- * Auto-advances every 5 seconds. Prev/Next buttons for manual control.
- * Optimized for INP: uses requestAnimationFrame + setTimeout, debounced keyboard,
- * batched DOM reads/writes.
+ * Auto-advances every 5 seconds. Prev/Next buttons, pause control, keyboard,
+ * touch-swipe and mouse-drag navigation.
+ *
+ * Accessibility notes:
+ * - Auto-rotation can be paused (WCAG 2.2.2) and pauses itself on hover/focus.
+ * - The counter is a live region only while rotation is stopped, per the WAI-ARIA
+ *   carousel pattern — announcing every 5s otherwise talks over the whole page.
+ * - Arrow keys are scoped to the carousel so they don't hijack page scrolling.
  */
 (function () {
     'use strict';
 
-    const track   = document.getElementById('luCarouselTrack');
-    const prevBtn = document.getElementById('luPrev');
-    const nextBtn = document.getElementById('luNext');
-    const counter = document.getElementById('luCounter');
+    const track    = document.getElementById('luCarouselTrack');
+    const prevBtn  = document.getElementById('luPrev');
+    const nextBtn  = document.getElementById('luNext');
+    const counter  = document.getElementById('luCounter');
+    const pauseBtn = document.getElementById('luPause');
+    const carousel = document.querySelector('.lu-carousel');
 
-    if (!track) return;
+    /* Every element below is dereferenced unconditionally, so bail unless all exist. */
+    if (!track || !prevBtn || !nextBtn || !counter || !pauseBtn || !carousel) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-        track.style.transition = 'none';
-    }
 
-    // Fisher–Yates shuffle of slide order on page load so visitors see a fresh sequence each visit
+    /* Fisher–Yates over slides 1..n-1 only.
+       Slide 0 stays pinned because it is the preload / fetchpriority target in the
+       markup: shuffling it would leave the prioritised image off-screen on most
+       loads. Visitors still get a fresh sequence after the first photo. */
     const slideEls = Array.from(track.querySelectorAll('.lu-carousel__slide'));
-    for (let i = slideEls.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+    for (let i = slideEls.length - 1; i > 1; i--) {
+        const j = 1 + Math.floor(Math.random() * i);
         [slideEls[i], slideEls[j]] = [slideEls[j], slideEls[i]];
     }
     track.replaceChildren(...slideEls);
@@ -30,34 +38,72 @@
     const slides = track.querySelectorAll('.lu-carousel__slide');
     const total  = slides.length;
     let current  = 0;
-    let timer;
+    let timer    = null;
+    let paused   = false;
+
+    /* Slides past the first carry their URLs in data-src/data-srcset and are
+       fetched only when they come into play.
+
+       loading="lazy" cannot do this job here: the slides are flex children
+       offset horizontally inside an overflow:hidden track, and Chrome does not
+       treat that as off-screen, so it eagerly fetched all 14 (~2.3 MB) on load. */
+    function hydrate(index) {
+        const slide = slides[(index + total) % total];
+        const img = slide && slide.querySelector('img');
+        if (!img || !img.dataset.src) return;
+        if (img.dataset.srcset) {
+            img.srcset = img.dataset.srcset;
+            delete img.dataset.srcset;
+        }
+        img.src = img.dataset.src;
+        delete img.dataset.src;
+    }
+
+    /* Current slide plus both neighbours, so an advance never lands on a blank frame. */
+    function hydrateAround(index) {
+        hydrate(index);
+        hydrate(index - 1);
+        hydrate(index + 1);
+    }
 
     function goTo(index) {
         current = (index + total) % total;
-        // Batch DOM writes together — read once, write together
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
         counter.textContent   = (current + 1) + ' / ' + total;
+        hydrateAround(current);
     }
 
     function startAuto() {
-        if (prefersReducedMotion) return;
-        function tick() {
-            timer = setTimeout(function () {
-                requestAnimationFrame(function () {
-                    goTo(current + 1);
-                    tick();
-                });
-            }, 5000);
-        }
-        tick();
+        if (prefersReducedMotion || paused) return;
+        stopAuto();
+        /* Silence the counter while the carousel advances on its own. */
+        counter.setAttribute('aria-live', 'off');
+        timer = setInterval(function () {
+            requestAnimationFrame(function () { goTo(current + 1); });
+        }, 5000);
     }
 
-    function resetAuto() {
+    function stopAuto() {
         if (timer) {
-            clearTimeout(timer);
+            clearInterval(timer);
             timer = null;
         }
+        /* Stopped: changes are now user-driven, so announce them. */
+        counter.setAttribute('aria-live', 'polite');
+    }
+
+    /* Restart the timer after a user interaction, unless the user has pressed pause. */
+    function resetAuto() {
+        stopAuto();
         startAuto();
+    }
+
+    function setPaused(next) {
+        paused = next;
+        pauseBtn.setAttribute('aria-pressed', String(paused));
+        pauseBtn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+        pauseBtn.textContent = paused ? '▶' : '‖';
+        if (paused) { stopAuto(); } else { startAuto(); }
     }
 
     prevBtn.addEventListener('click', function () {
@@ -70,134 +116,119 @@
         resetAuto();
     });
 
-    // Keyboard support — debounced to 200ms
+    pauseBtn.addEventListener('click', function () {
+        setPaused(!paused);
+    });
+
+    /* Arrow keys act only when focus is inside the carousel. */
     let lastKeyTime = 0;
-    document.addEventListener('keydown', function (e) {
+    carousel.addEventListener('keydown', function (e) {
         if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-        var now = Date.now();
+        const now = Date.now();
         if (now - lastKeyTime < 200) return;
         lastKeyTime = now;
-        if (e.key === 'ArrowLeft')  { goTo(current - 1); }
-        if (e.key === 'ArrowRight') { goTo(current + 1); }
+        e.preventDefault();
+        goTo(e.key === 'ArrowLeft' ? current - 1 : current + 1);
         resetAuto();
+    });
+
+    /* Pause while the pointer or keyboard focus is on the carousel. */
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', function () { if (!paused) startAuto(); });
+    carousel.addEventListener('focusin', stopAuto);
+    carousel.addEventListener('focusout', function (e) {
+        if (!carousel.contains(e.relatedTarget) && !paused) startAuto();
+    });
+
+    /* Don't run the timer while the tab is hidden. */
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) { stopAuto(); } else if (!paused) { startAuto(); }
     });
 
     // Init
     goTo(0);
-    startAuto();
+    setPaused(false);
 
-    // ---- Swipe / Drag Support (Phase 4.1) ----
+    // ---- Swipe / Drag Support ----
     (function () {
-        var startX      = 0;
-        var startY      = 0;
-        var currentX    = 0;
-        var isDragging  = false;
-        var isSwiping   = false;
-        var dragSlides  = 0; // prevent multiple advances
-        var carouselEl  = document.querySelector('.lu-carousel');
-        var trackEl     = track;
+        let startX     = 0;
+        let startY     = 0;
+        let currentX   = 0;
+        let isDragging = false;
+        let isSwiping  = false;
 
-        function getX(e) {
-            if (e.type.indexOf('touch') === 0) {
-                return e.touches[0].clientX;
-            }
-            return e.clientX;
-        }
-
-        function getY(e) {
-            if (e.type.indexOf('touch') === 0) {
-                return e.touches[0].clientY;
-            }
-            return e.clientY;
-        }
+        function getX(e) { return e.type.indexOf('touch') === 0 ? e.touches[0].clientX : e.clientX; }
+        function getY(e) { return e.type.indexOf('touch') === 0 ? e.touches[0].clientY : e.clientY; }
 
         function onStart(e) {
-            // Ignore if the user clicked a button
             if (e.target.closest && e.target.closest('.lu-carousel__btn')) return;
             isDragging = true;
-            isSwiping = false;
-            dragSlides = 0;
-            startX = getX(e);
-            startY = getY(e);
-            currentX = startX;
-            // Pause auto-advance during interaction
-            if (timer) {
-                clearTimeout(timer);
-                timer = null;
-            }
-            // Disable transition for real-time drag follow
+            isSwiping  = false;
+            startX     = getX(e);
+            startY     = getY(e);
+            currentX   = startX;
+            stopAuto();
             if (prefersReducedMotion) return;
-            trackEl.style.transition = 'none';
+            /* Follow the pointer in real time — the CSS transition is restored on release. */
+            track.style.transition = 'none';
         }
 
         function onMove(e) {
             if (!isDragging) return;
-            var dx = getX(e) - startX;
-            var dy = getY(e) - startY;
+            const dx = getX(e) - startX;
+            const dy = getY(e) - startY;
 
-            // If vertical movement dominates, don't treat as swipe
+            // Vertical movement dominates — let the page scroll and abandon the drag.
             if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 10) {
-                // Allow vertical scroll — clean up and bail
                 isDragging = false;
-                isSwiping = false;
-                trackEl.style.transition = '';
+                isSwiping  = false;
+                track.style.transition = '';
+                goTo(current);
                 return;
             }
 
-            e.preventDefault(); // Prevent page scroll while swiping horizontally
-            currentX = getX(e);
+            if (e.cancelable) e.preventDefault();
+            currentX  = getX(e);
             isSwiping = true;
 
             if (prefersReducedMotion) return;
 
-            // Real-time drag follow
-            var offset = ((currentX - startX) / trackEl.offsetWidth) * 100;
-            var baseTranslate = -(current * 100);
-            trackEl.style.transform = 'translateX(calc(' + baseTranslate + '% + ' + offset + 'px))';
+            /* baseTranslate is a percentage, dx is pixels — calc() mixes them.
+               (Previously dx was converted to a percentage and then emitted with a
+               px unit, which made the track follow at ~1/10 of pointer speed.) */
+            const baseTranslate = -(current * 100);
+            track.style.transform = 'translateX(calc(' + baseTranslate + '% + ' + dx + 'px))';
         }
 
         function onEnd() {
             if (!isDragging) return;
             isDragging = false;
-
-            // Restore transition
-            trackEl.style.transition = '';
+            track.style.transition = '';
 
             if (!isSwiping) {
-                // Wasn't a swipe — restart timer
-                resetAuto();
+                if (!paused) startAuto();
                 return;
             }
 
-            var deltaX = currentX - startX;
-
-            if (Math.abs(deltaX) > 50 && dragSlides === 0) {
-                dragSlides = 1;
-                if (deltaX < 0) {
-                    goTo(current + 1);
-                } else {
-                    goTo(current - 1);
-                }
+            const deltaX = currentX - startX;
+            if (Math.abs(deltaX) > 50) {
+                goTo(deltaX < 0 ? current + 1 : current - 1);
             } else {
-                // Snap back to current slide
                 goTo(current);
             }
 
             isSwiping = false;
-            resetAuto();
+            if (!paused) startAuto();
         }
 
-        // Touch events
-        carouselEl.addEventListener('touchstart', onStart, { passive: true });
-        carouselEl.addEventListener('touchmove', onMove, { passive: false });
-        carouselEl.addEventListener('touchend', onEnd, { passive: true });
+        carousel.addEventListener('touchstart', onStart, { passive: true });
+        carousel.addEventListener('touchmove', onMove, { passive: false });
+        carousel.addEventListener('touchend', onEnd, { passive: true });
 
-        // Mouse drag events
-        carouselEl.addEventListener('mousedown', onStart);
+        carousel.addEventListener('mousedown', onStart);
         document.addEventListener('mousemove', onMove);
         document.addEventListener('mouseup', onEnd);
 
-        // Prevent text selection while dragging
-        carouselEl.addEventListener('dragstart', function (e) { e.preventDefault(); });
+        carousel.addEventListener('dragstart', function (e) { e.preventDefault(); });
     }());
 }());

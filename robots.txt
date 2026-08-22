@@ -1,0 +1,7 @@
+# Game Creators Space
+# TODO(deploy): replace https://SITE-URL-HERE with the live origin.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://SITE-URL-HERE/sitemap.xml

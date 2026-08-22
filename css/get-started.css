@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Get Started Page — get-started.css
+   Resource directory: compact, text-only list of tools and links.
+   Extracted from an inline <style> block in get-started.html so page styles
+   live alongside css/level-up.css, and so these rules no longer collide with
+   a second set of .resource-list definitions in styles.css.
+   ========================================================================== */
+
+/* === Resource List — compact text-only directory === */
+.resource-list {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.resource-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.75rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-family: var(--font-body);
+}
+
+.resource-list li:last-child {
+    border-bottom: none;
+}
+
+.resource-list a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+    touch-action: manipulation;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+}
+
+@media (hover: hover) {
+    .resource-list a:hover {
+        color: var(--color-blue-deep);
+    }
+}
+
+.resource-list a:active {
+    color: var(--color-blue-deep);
+}
+
+.resource-list .resource-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.45;
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Category label — light visual separator.
+   Was #888 (~3.5:1 on white), below AA for text this size. #6B7280 clears 4.5:1. */
+.resource-category-label {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6B7280;
+    margin: 1.75rem 0 0.5rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.resource-category-label:first-child {
+    margin-top: 0;
+}
+
+/* Phone Landscape / Small Tablet and below — let long link text wrap */
+@media (max-width: 767px) {
+    .resource-list a {
+        white-space: normal;
+    }
+}

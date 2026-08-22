@@ -4,107 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Everything you need to start making games at NAIT. Engines, tools, asset libraries, and downloadable templates — curated by Game Creators Space.">
-    <meta property="og:title" content="Get Started | Game Creators Space">
-    <meta property="og:description" content="Engines, tools, asset libraries, and downloadable templates for game dev beginners at NAIT. Curated by Game Creators Space.">
+    <meta name="description" content="A curated directory of game development tools for NAIT students: engines, IDEs, 3D and 2D art software, audio tools, and free asset libraries.">
+
+    <!-- TODO(deploy): replace every https://SITE-URL-HERE with the live origin. -->
+    <link rel="canonical" href="https://SITE-URL-HERE/get-started.html">
+
+    <meta property="og:site_name" content="Game Creators Space">
+    <meta property="og:title" content="Game Dev Resources | Game Creators Space">
+    <meta property="og:description" content="Engines, IDEs, art and audio tools, and free asset libraries for game dev at NAIT. Curated by Game Creators Space.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/gsc-logo.png">
+    <meta property="og:url" content="https://SITE-URL-HERE/get-started.html">
+    <meta property="og:image" content="https://SITE-URL-HERE/assets/gsc-logo.png">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="1080">
+    <meta property="og:image:alt" content="Game Creators Space logo">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game Dev Resources | Game Creators Space">
+    <meta name="twitter:description" content="Engines, IDEs, art and audio tools, and free asset libraries for game dev at NAIT.">
+    <meta name="twitter:image" content="https://SITE-URL-HERE/assets/gsc-logo.png">
+
     <meta name="theme-color" content="#0077C8">
-    <link rel="manifest" href="/manifest.json">
-    <title>Start Creating - Game Creators Space</title>
+    <link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Game Dev Resources | Game Creators Space</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Bebas+Neue&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* === Resource List — compact text-only directory === */
-        .resource-list {
-            list-style: none;
-            margin: 0 0 2rem;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .resource-list li {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 0.35rem 0.75rem;
-            padding: 0.4rem 0;
-            border-bottom: 1px solid #e5e7eb;
-            font-family: var(--font-body);
-        }
-
-        .resource-list li:last-child {
-            border-bottom: none;
-        }
-
-        .resource-list a {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--color-primary);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            white-space: nowrap;
-            touch-action: manipulation;
-            min-height: 48px;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        @media (hover: hover) {
-            .resource-list a:hover {
-                color: var(--color-blue-deep);
-            }
-        }
-        .resource-list a:active {
-            color: var(--color-blue-deep);
-        }
-
-        .resource-list .resource-desc {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.45;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        /* Category label — light visual separator */
-        .resource-category-label {
-            font-family: var(--font-body);
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #888;
-            margin: 1.75rem 0 0.5rem;
-            padding-bottom: 0.35rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .resource-category-label:first-child {
-            margin-top: 0;
-        }
-
-        /* Keep download links styled as buttons in the templates section */
-        .resource-list .btn-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: normal;
-        }
-    </style>
+    <link rel="stylesheet" href="css/get-started.css">
 </head>
 
 <body class="guide-page">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-        <a href="index.html" class="logo-link"><img src="assets/gsc-logo-plain.png" alt="GCS Logo"
-                class="header-logo" width="40" height="40"></a>
+        <a href="index.html" class="logo-link"><img src="assets/logos/gsc-logo-plain-40w.webp" alt="GCS Logo"
+                class="header-logo" width="40" height="40"
+                srcset="assets/logos/gsc-logo-plain-40w.webp 40w, assets/logos/gsc-logo-plain-80w.webp 80w, assets/logos/gsc-logo-plain-120w.webp 120w"
+                sizes="40px"></a>
         <nav>
             <a href="index.html">Home</a>
             <a href="get-started.html">Get Started</a>
@@ -113,7 +52,7 @@
         <noscript><style>.hamburger-btn{display:none!important}.site-header nav{display:flex!important;position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:0!important;background:transparent!important;flex-direction:row!important;gap:2rem!important;backdrop-filter:none!important;box-shadow:none!important}.site-header nav a{border-bottom:none!important;padding:0!important;font-size:0.9rem!important;min-height:auto!important}</style></noscript>
     </header>
 
-    <main>
+    <main id="main">
         <!-- Guide Hero -->
         <section class="hero guide-hero">
             <div class="hero-container">
@@ -127,11 +66,11 @@
 
                 </div>
                 <div class="hero-visual">
-                    <img src="assets/photos/levelup/Controllers.png" alt="Game controllers"
+                    <img src="assets/photos/levelup/Controllers-1200w.webp" alt="Game controllers"
                         class="guide-hero-img" width="3300" height="2326"
                         srcset="assets/photos/levelup/Controllers-600w.webp 600w, assets/photos/levelup/Controllers-1200w.webp 1200w"
                         sizes="(max-width: 767px) 100vw, 50vw"
-                        loading="lazy" decoding="async">
+                        fetchpriority="high" decoding="async">
                 </div>
             </div>
         </section>
@@ -149,14 +88,14 @@
                 </header>
 
                 <p class="resource-category-label">Industry Standard</p>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.unrealengine.com" target="_blank" rel="noopener noreferrer">Unreal Engine</a> <span class="resource-desc">AAA-grade engine with best-in-class visuals; great for 3D and cinematic-focused projects. <em>Free (royalty on commercial revenue)</em></span></li>
                     <li><a href="https://unity.com" target="_blank" rel="noopener noreferrer">Unity</a> <span class="resource-desc">Versatile 2D/3D engine with the largest tutorial ecosystem, ideal for most student projects. <em>Free (Personal plan) / Student Plan available</em></span></li>
                     <li><a href="https://godotengine.org" target="_blank" rel="noopener noreferrer">Godot</a> <span class="resource-desc">Lightweight, fully open-source engine with a beginner-friendly scripting language (GDScript). <em>Free &amp; Open Source</em></span></li>
                 </ul>
 
                 <p class="resource-category-label">Beginner Friendly</p>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.lexaloffle.com/pico-8.php" target="_blank" rel="noopener noreferrer">PICO-8</a> <span class="resource-desc">A "fantasy console" that constrains you to simple tools, perfect for learning game logic fast. <em>Paid (one-time)</em></span></li>
                     <li><a href="https://gamemaker.io" target="_blank" rel="noopener noreferrer">GameMaker</a> <span class="resource-desc">Drag-and-drop or code (GML) 2D engine, excellent for first-time devs. <em>Free tier / Student discounts</em></span></li>
                     <li><a href="https://www.rpgmakerweb.com" target="_blank" rel="noopener noreferrer">RPG Maker</a> <span class="resource-desc">Purpose-built for narrative-driven RPGs with minimal coding required. <em>Paid</em></span></li>
@@ -172,7 +111,7 @@
                     <h2>Programming &amp; Version Control</h2>
                     <h3>Write &amp; Track Your Code</h3>
                 </header>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">Visual Studio Code</a> <span class="resource-desc">Lightweight, extensible code editor supporting virtually every language used in game dev. <em>Free</em></span></li>
                     <li><a href="https://www.jetbrains.com" target="_blank" rel="noopener noreferrer">JetBrains IDEs (Rider, CLion, etc.)</a> <span class="resource-desc">Full-featured IDEs with powerful debugging, ideal for C#/Unity or C++ work. <em>Free via Student License</em></span></li>
                     <li><a href="https://cursor.com" target="_blank" rel="noopener noreferrer">Cursor</a> <span class="resource-desc">AI-native code editor built on VS Code, useful for pair-programming with AI. <em>Free tier / Paid Pro</em></span></li>
@@ -188,7 +127,7 @@
                     <h2>3D Modeling &amp; Animation</h2>
                     <h3>Build Your World</h3>
                 </header>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.blender.org" target="_blank" rel="noopener noreferrer">Blender</a> <span class="resource-desc">Fully-featured, open-source 3D suite covering modeling, rigging, animation, and rendering. <em>Free &amp; Open Source</em></span></li>
                     <li><a href="https://www.autodesk.com/products/maya" target="_blank" rel="noopener noreferrer">Maya</a> <span class="resource-desc">Industry-standard for character animation and rigging in film/games studios. <em>Free via Student License</em></span></li>
                     <li><a href="https://www.maxon.net/en/zbrush" target="_blank" rel="noopener noreferrer">ZBrush</a> <span class="resource-desc">The go-to tool for high-detail digital sculpting of characters and organic assets. <em>Paid / Student pricing</em></span></li>
@@ -197,7 +136,7 @@
                 </ul>
 
                 <p class="resource-category-label">AI-Assisted 3D Modeling</p>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.tripo3d.ai" target="_blank" rel="noopener noreferrer">Tripo</a> <span class="resource-desc">Generates 3D models from text or image prompts, useful for rapid prototyping. <em>Free tier / Paid</em></span></li>
                     <li><a href="https://www.meshy.ai" target="_blank" rel="noopener noreferrer">Meshy</a> <span class="resource-desc">AI text/image-to-3D generator with texturing support. <em>Free tier / Paid</em></span></li>
                 </ul>
@@ -211,7 +150,7 @@
                     <h2>Texturing</h2>
                     <h3>Surface Your Assets</h3>
                 </header>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.adobe.com/products/substance3d/apps/painter.html" target="_blank" rel="noopener noreferrer">Substance Painter</a> <span class="resource-desc">Industry-standard PBR texture painting tool used across AAA studios. <em>Free via Student License</em></span></li>
                     <li><a href="https://quixel.com/mixer" target="_blank" rel="noopener noreferrer">Quixel Mixer</a> <span class="resource-desc">Free texture-blending tool built around the Megascans library. <em>Free</em></span></li>
                     <li><a href="https://armorpaint.org" target="_blank" rel="noopener noreferrer">ArmorPaint</a> <span class="resource-desc">Open-source alternative to Substance Painter for PBR texturing. <em>Free &amp; Open Source</em></span></li>
@@ -226,7 +165,7 @@
                     <h2>2D Art &amp; Concept</h2>
                     <h3>Sketch, Paint, Design</h3>
                 </header>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer">Photoshop</a> <span class="resource-desc">Industry-standard raster editor for concept art and UI mockups. <em>Free via Student License</em></span></li>
                     <li><a href="https://krita.org" target="_blank" rel="noopener noreferrer">Krita</a> <span class="resource-desc">Free, open-source painting software built specifically for digital artists. <em>Free &amp; Open Source</em></span></li>
                     <li><a href="https://www.aseprite.org" target="_blank" rel="noopener noreferrer">Aseprite</a> <span class="resource-desc">The standard tool for pixel art and sprite animation. <em>Paid (or free if self-compiled)</em></span></li>
@@ -245,7 +184,7 @@
                     <h2>Audio</h2>
                     <h3>Sound Design &amp; Music</h3>
                 </header>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.audacityteam.org" target="_blank" rel="noopener noreferrer">Audacity</a> <span class="resource-desc">Free, open-source audio recording and editing software. <em>Free &amp; Open Source</em></span></li>
                     <li><a href="https://lmms.io" target="_blank" rel="noopener noreferrer">LMMS</a> <span class="resource-desc">Free digital audio workstation for composing and producing music/SFX. <em>Free &amp; Open Source</em></span></li>
                     <li><a href="https://www.fmod.com" target="_blank" rel="noopener noreferrer">FMOD</a> <span class="resource-desc">Adaptive audio middleware for implementing dynamic music and sound in-engine. <em>Free for students/indies</em></span></li>
@@ -261,7 +200,7 @@
                     <h2>Productivity &amp; Project Management</h2>
                     <h3>Stay Organized</h3>
                 </header>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://www.notion.so" target="_blank" rel="noopener noreferrer">Notion</a> <span class="resource-desc">All-in-one workspace for GDDs, wikis, and task tracking. <em>Free Student Plan</em></span></li>
                     <li><a href="https://trello.com" target="_blank" rel="noopener noreferrer">Trello</a> <span class="resource-desc">Simple Kanban-style board for sprint and task management. <em>Free</em></span></li>
                     <li><a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">Figma</a> <span class="resource-desc">Collaborative interface design tool, useful for UI/UX mockups. <em>Free Student Plan</em></span></li>
@@ -278,7 +217,7 @@
                     <h2>Free Asset Libraries</h2>
                     <h3>Ready-to-Use Resources</h3>
                 </header>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li><a href="https://kenney.nl" target="_blank" rel="noopener noreferrer">Kenney</a> <span class="resource-desc">Massive library of free, CC0-licensed 2D/3D game assets. <em>Free</em></span></li>
                     <li><a href="https://polyhaven.com" target="_blank" rel="noopener noreferrer">Poly Haven</a> <span class="resource-desc">High-quality, free HDRIs, textures, and 3D models. <em>Free &amp; Open Source</em></span></li>
                     <li><a href="https://freesound.org" target="_blank" rel="noopener noreferrer">Freesound.org</a> <span class="resource-desc">Community-driven library of free sound effects and samples. <em>Free</em></span></li>
@@ -290,27 +229,34 @@
             </div>
         </section>
 
-        <!-- Chapter 9: Templates -->
+        <!--
+        Chapter 9: Templates — DISABLED
+
+        TODO: re-enable once the PDFs are committed. Both links 404 today: the files
+        assets/downloads/gcs-gdd-template.pdf and assets/downloads/gcs-game-jam-care-package.pdf
+        have never existed in this repo. Add them under assets/downloads/ with exactly
+        those names, then uncomment this section. Paths below are relative (not
+        root-absolute) so they resolve on a project-path host too.
+
         <section id="templates" class="chapter">
             <div class="container">
                 <div class="chapter-header">
                     <h2>Templates</h2>
                     <h3>Start With a Head Start</h3>
                 </div>
-                <ul class="resource-list">
+                <ul class="resource-list" role="list">
                     <li>
-                        <a href="/assets/downloads/gcs-gdd-template.pdf" download>Game Design Document (GDD) Template</a>
-                        <span class="resource-desc">Standardized document for planning scope, mechanics, and art direction before production. <em>Club-provided</em><br><small style="color: var(--color-muted);">Adapted from the IndieCrypt public Game Design Document template. Original framework © IndieCrypt; this adaptation maintained by GCS.</small></span>
-                        
+                        <a href="assets/downloads/gcs-gdd-template.pdf" download>Game Design Document (GDD) Template</a>
+                        <span class="resource-desc">Standardized document for planning scope, mechanics, and art direction before production. <em>Club-provided</em><br><small style="color: var(--color-muted);">Adapted from the IndieCrypt public Game Design Document template. Original framework &copy; IndieCrypt; this adaptation maintained by GCS.</small></span>
                     </li>
                     <li>
-                        <a href="/assets/downloads/gcs-game-jam-care-package.pdf" download>Game Jam Care Package</a>
+                        <a href="assets/downloads/gcs-game-jam-care-package.pdf" download>Game Jam Care Package</a>
                         <span class="resource-desc">Starter kit with engine project files, a scoped GDD template, and a submission checklist for jam weekends. <em>Club-provided</em><br><small style="color: var(--color-muted);">Originally authored by the University of Alberta Video Game Art and Design Club (VGAD). Republished by GCS with attribution.</small></span>
-                        
                     </li>
                 </ul>
             </div>
         </section>
+        -->
     </main>
 
     <footer>

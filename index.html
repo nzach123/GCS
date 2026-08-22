@@ -6,15 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description"
         content="Game Creators Space is the campus home for NAIT students who want to make games. Build, ship, and connect weekly.">
+
+    <!-- TODO(deploy): replace every https://SITE-URL-HERE with the live origin.
+         Appears in canonical, og:url and og:image / twitter:image across all three pages. -->
+    <link rel="canonical" href="https://SITE-URL-HERE/">
+
+    <meta property="og:site_name" content="Game Creators Space">
     <meta property="og:title" content="Game Creators Space">
     <meta property="og:description" content="Game Creators Space is the campus home for NAIT students who want to make games — not just play them. We meet weekly to design, build, break, and ship together.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/gsc-logo.png">
+    <meta property="og:url" content="https://SITE-URL-HERE/">
+    <meta property="og:image" content="https://SITE-URL-HERE/assets/gsc-logo.png">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="1080">
+    <meta property="og:image:alt" content="Game Creators Space logo">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game Creators Space">
+    <meta name="twitter:description" content="The campus home for NAIT students who want to make games — not just play them.">
+    <meta name="twitter:image" content="https://SITE-URL-HERE/assets/gsc-logo.png">
+
     <meta name="theme-color" content="#0077C8">
-    <link rel="manifest" href="/manifest.json">
-    <title>Game Creators Space</title>
+    <link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Game Creators Space | NAIT's Student Game Dev Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Bebas+Neue&display=swap"
@@ -23,9 +39,12 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-        <a href="index.html" class="logo-link"><img src="assets/gsc-logo-plain.png" alt="GCS Logo"
-                class="header-logo" width="40" height="40"></a>
+        <a href="index.html" class="logo-link"><img src="assets/logos/gsc-logo-plain-40w.webp" alt="GCS Logo"
+                class="header-logo" width="40" height="40"
+                srcset="assets/logos/gsc-logo-plain-40w.webp 40w, assets/logos/gsc-logo-plain-80w.webp 80w, assets/logos/gsc-logo-plain-120w.webp 120w"
+                sizes="40px"></a>
         <nav>
             <a href="index.html">Home</a>
             <a href="get-started.html">Get Started</a>
@@ -34,9 +53,8 @@
         <noscript><style>.hamburger-btn{display:none!important}.site-header nav{display:flex!important;position:static!important;transform:none!important;width:auto!important;height:auto!important;padding:0!important;background:transparent!important;flex-direction:row!important;gap:2rem!important;backdrop-filter:none!important;box-shadow:none!important}.site-header nav a{border-bottom:none!important;padding:0!important;font-size:0.9rem!important;min-height:auto!important}</style></noscript>
     </header>
 
-    <main>
+    <main id="main">
         <section class="hero">
-            <!-- Hero content exists here -->
             <div class="hero-container">
                 <div class="hero-content">
                     <span class="eyebrow-pill">BUILD · PLAY · CONNECT</span>
@@ -44,7 +62,7 @@
                     <p class="hero-subtitle">Join the Game Creators Space.</p>
                     <p class="hero-description">Game Creators Space is the campus home for NAIT students who want to make games — not just play them. Bring an idea, bring nothing at all, or bring a half-finished prototype you started over the summer. We meet weekly to design, build, break, and ship together.</p>
 
-                    <ul class="hero-features">
+                    <ul class="hero-features" role="list">
                         <li><strong>Speaker Events</strong> — Working developers from studios across Alberta and beyond.</li>
                         <li><strong>Game Jams</strong> — 48-hour build sprints, mentor-supported.</li>
                         <li><strong>Collaborative Club Space</strong> — A room, the gear, and people who get it.</li>
@@ -57,8 +75,8 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <img src="assets/gsc-logo.png" alt="GCS Logo - Game Creators Space Controller" class="hero-logo" width="1080" height="1080" fetchpriority="high"
-                         srcset="assets/logos/gsc-logo-250w.webp 250w, assets/logos/gsc-logo-500w.webp 500w"
+                    <img src="assets/logos/gsc-logo-1080w.webp" alt="GCS Logo - Game Creators Space Controller" class="hero-logo" width="1080" height="1080" fetchpriority="high"
+                         srcset="assets/logos/gsc-logo-250w.webp 250w, assets/logos/gsc-logo-500w.webp 500w, assets/logos/gsc-logo-1080w.webp 1080w"
                          sizes="(max-width: 767px) 90vw, 550px">
                 </div>
             </div>
@@ -90,6 +108,33 @@
             <p class="copyright">&copy; 2026 Game Creators Space</p>
         </div>
     </footer>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Game Creators Space",
+      "alternateName": "GCS",
+      "description": "NAIT's student game developer club. Weekly meetups, game jams, speaker events and the annual Level Up conference.",
+      "url": "https://SITE-URL-HERE/",
+      "logo": "https://SITE-URL-HERE/assets/gsc-logo.png",
+      "email": "gamecreatorsspace@gmail.com",
+      "location": {
+        "@type": "Place",
+        "name": "Northern Alberta Institute of Technology",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Edmonton",
+          "addressRegion": "AB",
+          "addressCountry": "CA"
+        }
+      },
+      "sameAs": [
+        "https://discord.gg/YpPJXkeW",
+        "https://www.instagram.com/gamecreatorsspace/",
+        "https://www.ookslife.ca/organization/gamecreatorsspace"
+      ]
+    }
+    </script>
     <script src="js/nav.js" defer></script>
 </body>
 
