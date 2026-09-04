@@ -32,8 +32,8 @@
     --container-max:   1200px;
 
     /* === Hero Composition (§2.5.1 / §2.5.2) === */
-    --hero-angle:       110deg;
-    --hero-split-pos:   58%;
+    --hero-angle:       135deg;  /* 45° edge — parallel to the arrow pattern */
+    --hero-split-pos:   62%;
     --pattern-tile:     200px;
     --pattern-opacity:  0.22;
 }
